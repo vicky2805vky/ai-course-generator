@@ -6,7 +6,7 @@ import HowItWorks from "./components/HowItWorks";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col gap-10 py-10">
+    <div className="flex flex-col gap-10">
       <Hero />
       <Features />
       <CTA />
