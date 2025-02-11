@@ -80,3 +80,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+}

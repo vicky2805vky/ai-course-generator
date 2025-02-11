@@ -1,4 +1,4 @@
-import Dashboard from "./features/dashboard/Dashboard";
+import CourseCreationForm from "./features/courseInputForm/CourseCreationForm";
 import NavBar from "./features/navigation/NavBar";
 
 const App = () => {
@@ -8,8 +8,8 @@ const App = () => {
       style={{ backgroundImage: "url(/bg.jpg)" }}
     >
       <NavBar />
-      <main className="px-10 py-5 pt-[100px] md:px-20 md:py-10 md:pt-[100px] [&_*]:box-border">
-        <Dashboard />
+      <main className="px-5 py-5 pt-[100px] md:px-20 md:py-10 md:pt-[100px] [&_*]:box-border">
+        <CourseCreationForm />
       </main>
     </div>
   );
