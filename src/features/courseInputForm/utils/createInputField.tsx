@@ -34,9 +34,13 @@ const createInputField = (inputConfig: FormField) => {
             <SelectValue placeholder={"select " + inputConfig.label} />
           </SelectTrigger>
           <SelectContent className="text-primary">
-            {inputConfig.options.map((option) => {
+            {inputConfig.options.map((option, i) => {
               return (
-                <SelectItem className="text-[10px] md:text-sm" value={option}>
+                <SelectItem
+                  key={i}
+                  className="text-[10px] md:text-sm"
+                  value={option}
+                >
                   {option}
                 </SelectItem>
               );

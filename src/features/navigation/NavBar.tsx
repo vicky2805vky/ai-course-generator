@@ -3,13 +3,14 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
 import NavigationLinks from "./components/NavigationLinks";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <nav className="group fixed left-0 right-0 z-50 flex items-center justify-between overflow-hidden border-b-[2px] border-white/15 bg-white bg-opacity-5 p-3 px-10 backdrop-blur-sm md:px-20 [&>*]:flex">
-        <div>LOGO</div>
+        <Link to={"/"}>LOGO</Link>
         <ul className="!hidden gap-5 md:!flex [&>*]:cursor-pointer">
           <NavigationLinks />
         </ul>

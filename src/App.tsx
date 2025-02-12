@@ -1,5 +1,34 @@
+import Layout from "./components/Layout";
 import CourseCreationForm from "./features/courseInputForm/CourseCreationForm";
-import NavBar from "./features/navigation/NavBar";
+import Dashboard from "./features/dashboard/Dashboard";
+import LandingPage from "./features/landing/LandingPage";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/home",
+        element: <Dashboard />,
+      },
+      {
+        path: "/course/create",
+        element: <CourseCreationForm />,
+      },
+      {
+        path: "/*",
+        element: <p>page not found</p>,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
@@ -7,10 +36,7 @@ const App = () => {
       className="min-h-[100vh] bg-[#191D29] bg-cover bg-fixed bg-center bg-no-repeat text-white"
       style={{ backgroundImage: "url(/bg.jpg)" }}
     >
-      <NavBar />
-      <main className="px-5 py-5 pt-[100px] md:px-20 md:py-10 md:pt-[100px] [&_*]:box-border">
-        <CourseCreationForm />
-      </main>
+      <RouterProvider router={router} />
     </div>
   );
 };

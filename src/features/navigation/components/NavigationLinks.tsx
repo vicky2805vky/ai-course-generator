@@ -1,8 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavigationLinks = (props: React.HTMLAttributes<HTMLLIElement>) => {
-  const navLinks = ["Home", "Explore", "Features", "Pricing"];
-  return navLinks.map((link) => <li {...props}>{link}</li>);
+  const navLinks = ["home", "explore", "features", "pricing"];
+  return navLinks.map((link, i) => (
+    <li key={i} {...props}>
+      <NavLink to={`/${link}`} className="capitalize">
+        {link}
+      </NavLink>
+    </li>
+  ));
 };
 
 export default NavigationLinks;

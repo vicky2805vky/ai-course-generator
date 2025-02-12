@@ -37,8 +37,8 @@ const Features = () => {
         Features to Elevate Your Learning
       </h2>
       <div className="flex flex-wrap justify-between gap-14">
-        {featureCardsData.map((cardData) => (
-          <FeatureCard {...cardData} />
+        {featureCardsData.map((cardData, i) => (
+          <FeatureCard key={i} {...cardData} />
         ))}
       </div>
     </section>

@@ -1,3 +1,4 @@
+import React from "react";
 import { IconType } from "react-icons";
 
 type formStepperProps = {
@@ -13,7 +14,7 @@ const FormStepper = ({ currentStep, formSteps }: formStepperProps) => {
     <div className="mx-auto flex items-center justify-between">
       {formSteps.map((step, i) => {
         return (
-          <>
+          <React.Fragment key={i}>
             {i !== 0 && (
               <div
                 className={`h-2 w-full bg-primary transition-opacity ${currentStep >= i + 1 ? "opacity-100" : "opacity-50"}`}
@@ -29,7 +30,7 @@ const FormStepper = ({ currentStep, formSteps }: formStepperProps) => {
                 {step.name}
               </p>
             </div>
-          </>
+          </React.Fragment>
         );
       })}
     </div>

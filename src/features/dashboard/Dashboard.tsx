@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import YourCourses from "./components/YourCourses";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -8,7 +9,9 @@ const Dashboard = () => {
       <p className="text-3xl font-bold">Welcome User!</p>
       <div className="flex items-center justify-between">
         <p className="text-lg font-bold md:text-2xl">your courses</p>
-        <Button>Create Course</Button>
+        <Link to={"/course/create"}>
+          <Button>Create Course</Button>
+        </Link>
       </div>
       <YourCourses />
       <div className="flex w-6/12 max-w-[400px] items-center justify-between gap-5">
