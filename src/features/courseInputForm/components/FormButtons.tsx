@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FaGear } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 type formButtonsProps = {
   currentStep: number;
@@ -13,6 +14,7 @@ const FormButtons = ({
   currentStep,
   maxSteps,
 }: formButtonsProps) => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between">
       <Button
@@ -28,7 +30,11 @@ const FormButtons = ({
         </Button>
       )}
       {currentStep === maxSteps && (
-        <Button>
+        <Button
+          onClick={() => {
+            navigate("/course/courseid/outline");
+          }}
+        >
           Generate <FaGear />
         </Button>
       )}

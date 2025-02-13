@@ -6,6 +6,8 @@ import { BsStack } from "react-icons/bs";
 import { HiMiniSquaresPlus } from "react-icons/hi2";
 import { TbTargetArrow } from "react-icons/tb";
 import FormBody from "./components/FormBody";
+import { Link } from "react-router-dom";
+import { FaXmark } from "react-icons/fa6";
 
 const formSteps = [
   {
@@ -28,9 +30,16 @@ const CourseCreationForm = () => {
     <div
       className={
         GLASSMORPH_BG +
-        "mx-auto w-[_clamp(280px,_50%,_500px)] space-y-10 rounded-lg p-5"
+        "mx-auto w-[_clamp(280px,_50%,_500px)] space-y-10 overflow-hidden rounded-lg p-5"
       }
     >
+      <Link
+        to={"/home"}
+        className="absolute right-0 top-0 rounded-bl-xl bg-primary p-3 text-xs md:text-base"
+      >
+        <FaXmark aria-hidden />
+        <p className="sr-only">cancel course creation</p>
+      </Link>
       <FormStepper currentStep={currentFormStep} formSteps={formSteps} />
       <FormBody currentFormStep={currentFormStep} />
       <FormButtons

@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
 import CourseCreationForm from "./features/courseInputForm/CourseCreationForm";
+import CourseOutline from "./features/courseOutline/CourseOutline";
 import Dashboard from "./features/dashboard/Dashboard";
 import LandingPage from "./features/landing/LandingPage";
 
@@ -19,8 +20,17 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/course/create",
-        element: <CourseCreationForm />,
+        path: "/course",
+        children: [
+          {
+            path: "create",
+            element: <CourseCreationForm />,
+          },
+          {
+            path: ":id/outline",
+            element: <CourseOutline />,
+          },
+        ],
       },
       {
         path: "/*",
