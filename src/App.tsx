@@ -1,6 +1,8 @@
 import Layout from "./components/Layout";
 import CourseCreationForm from "./features/courseInputForm/CourseCreationForm";
+import CourseSuccessful from "./features/courseOutline/components/CourseSuccessful";
 import CourseOutline from "./features/courseOutline/CourseOutline";
+import CoursePage from "./features/coursePage/CoursePage";
 import Dashboard from "./features/dashboard/Dashboard";
 import LandingPage from "./features/landing/LandingPage";
 
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
           {
             path: ":id/outline",
             element: <CourseOutline />,
+          },
+          {
+            path: ":id/success",
+            element: <CourseSuccessful />,
+          },
+          {
+            path: ":id",
+            element: <CoursePage />,
           },
         ],
       },

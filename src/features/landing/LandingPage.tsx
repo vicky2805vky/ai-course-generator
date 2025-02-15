@@ -9,8 +9,8 @@ const LandingPage = () => {
     <div className="flex flex-col gap-10">
       <Hero />
       <Features />
-      <CTA />
       <HowItWorks />
+      <CTA />
       <Footer />
     </div>
   );
