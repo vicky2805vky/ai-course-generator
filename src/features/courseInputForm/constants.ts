@@ -11,6 +11,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "Category",
       type: "input",
+      name: "category",
       attributes: {
         id: "category",
         placeholder: "programming, sports",
@@ -20,6 +21,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "Topic",
       type: "input",
+      name: "topic",
       attributes: {
         id: "topic",
         placeholder: "python, chess",
@@ -29,6 +31,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "Description",
       type: "text-area",
+      name: "description",
       attributes: {
         id: "description",
         placeholder: "describe your course",
@@ -39,16 +42,24 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "level",
       type: "select",
-      options: ["begginer", "intermediate", "advanced"],
+      name: "level",
+      attributes: {},
+
+      options: ["beginner", "intermediate", "advanced"],
     },
     {
       label: "duration",
       type: "select",
+      name: "duration",
+      attributes: {},
+
       options: ["less than 1 hrs", "1-3 hrs", "3-5 hrs", "more than 5 hrs"],
     },
     {
       label: "chapters",
       type: "select",
+      name: "chapters",
+      attributes: {},
       options: ["3", "4", "5", "6", "7", "8", "9", "10"],
     },
   ],
@@ -56,6 +67,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "include video",
       type: "switch",
+      name: "video",
       attributes: {
         id: "include-video",
         required: true,
@@ -64,6 +76,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     {
       label: "include quiz",
       type: "switch",
+      name: "quiz",
       attributes: {
         id: "include-quiz",
         required: true,

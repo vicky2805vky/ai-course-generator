@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,15 +8,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { cn } from "@/lib/utils";
 import { IoMdMenu } from "react-icons/io";
 
 const CourseCardMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button variant="invert">
+        <div
+          className={cn(buttonVariants({ variant: "invert", size: "icon" }))}
+        >
           <IoMdMenu />
-        </Button>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className={GLASSMORPH_BG + "text-white"}>
         <DropdownMenuLabel>Actions</DropdownMenuLabel>

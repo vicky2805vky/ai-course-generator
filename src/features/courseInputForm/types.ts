@@ -1,5 +1,11 @@
+import { formStateType } from "@/state/slices/courseFormSlice";
+import { SelectProps } from "@radix-ui/react-select";
+import { SwitchProps } from "@radix-ui/react-switch";
+import { RefAttributes } from "react";
+
 type mandatoryFormFields = {
   label: string;
+  name: keyof formStateType;
 };
 
 type textInputField = {
@@ -13,10 +19,11 @@ type textAreaInputField = {
 type selectInputField = {
   type: "select";
   options: string[];
+  attributes: SelectProps;
 };
 type switchInputField = {
   type: "switch";
-  attributes: React.InputHTMLAttributes<HTMLInputElement>;
+  attributes: Omit<SwitchProps & RefAttributes<HTMLButtonElement>, "ref">;
 };
 
 export type FormFieldType = "input" | "text-area" | "select" | "switch";

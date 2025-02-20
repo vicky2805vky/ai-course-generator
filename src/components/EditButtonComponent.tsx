@@ -1,5 +1,5 @@
 import { FaRegEdit } from "react-icons/fa";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import React from "react";
 import {
   Dialog,
@@ -14,6 +14,7 @@ import {
 import { Input } from "./ui/input";
 import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
 import { Label } from "./ui/label";
+import { cn } from "@/lib/utils";
 
 type editButtonComponentProps = {
   children: React.ReactNode;
@@ -29,25 +30,31 @@ const EditButtonComponent = ({
       {children}
       <Dialog>
         <DialogTrigger>
-          <Button size="icon" className="!scale-75 rounded-full">
+          <div
+            className={cn(
+              buttonVariants({
+                size: "icon",
+                className: "!scale-75 rounded-full",
+              }),
+            )}
+          >
             <FaRegEdit />
-          </Button>
+          </div>
         </DialogTrigger>
         <DialogContent className={GLASSMORPH_BG + "max-w-[400px] text-white"}>
           <DialogHeader>
             <DialogTitle>Edit</DialogTitle>
-            <DialogDescription>
-              <div className="flex items-center gap-5">
-                <Label className="font-bold">Edit:</Label>
-                <Input className="h-7 text-xs" />
-              </div>
-            </DialogDescription>
+            <DialogDescription>make changes to the following</DialogDescription>
           </DialogHeader>
+          <div className="flex items-center gap-5">
+            <Label className="font-bold">Edit:</Label>
+            <Input className="h-7 text-xs" />
+          </div>
           <DialogFooter>
             <div className="ml-auto flex gap-5">
               <Button>Save</Button>
               <DialogClose>
-                <Button>cancel</Button>
+                <div className={cn(buttonVariants())}>cancel</div>
               </DialogClose>
             </div>
           </DialogFooter>

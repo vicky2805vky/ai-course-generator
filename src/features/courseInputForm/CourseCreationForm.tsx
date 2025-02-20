@@ -8,6 +8,7 @@ import { TbTargetArrow } from "react-icons/tb";
 import FormBody from "./components/FormBody";
 import { Link } from "react-router-dom";
 import { FaXmark } from "react-icons/fa6";
+import LoadingDialog from "@/components/LoadingDialog";
 
 const formSteps = [
   {
@@ -26,6 +27,7 @@ const formSteps = [
 
 const CourseCreationForm = () => {
   const [currentFormStep, setCurrentFormStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   return (
     <div
       className={
@@ -46,7 +48,9 @@ const CourseCreationForm = () => {
         currentStep={currentFormStep}
         setCurrentStep={setCurrentFormStep}
         maxSteps={formSteps.length}
+        setIsSubmitting={setIsSubmitting}
       />
+      <LoadingDialog open={isSubmitting} />
     </div>
   );
 };

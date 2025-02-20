@@ -29,7 +29,7 @@ const createInputField = (inputConfig: FormField) => {
       );
     case "select":
       return (
-        <Select>
+        <Select {...inputConfig.attributes}>
           <SelectTrigger className="w-[180px] text-[10px] text-primary md:text-sm">
             <SelectValue placeholder={"select " + inputConfig.label} />
           </SelectTrigger>
@@ -51,7 +51,7 @@ const createInputField = (inputConfig: FormField) => {
     case "switch":
       return (
         <div>
-          <Switch />
+          <Switch {...inputConfig.attributes} />
         </div>
       );
   }

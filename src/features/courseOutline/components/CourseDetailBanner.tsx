@@ -2,22 +2,46 @@ import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { FaBook, FaClock } from "react-icons/fa";
 
-const bannerElements = [
-  {
-    Icon: BsBarChartLineFill,
-    label: "level",
-  },
-  {
-    Icon: FaClock,
-    label: "duration",
-  },
-  {
-    Icon: FaBook,
-    label: "chapters",
-  },
-];
+type courseDetailBannerType = {
+  level: string;
+  duration: string;
+  chapters: number;
+};
 
-const CourseDetailBanner = () => {
+const CourseDetailBanner = ({
+  chapters,
+  duration,
+  level,
+}: courseDetailBannerType) => {
+  const bannerElements = [
+    {
+      Icon: BsBarChartLineFill,
+      label: (
+        <>
+          <b>level: </b>
+          {level}
+        </>
+      ),
+    },
+    {
+      Icon: FaClock,
+      label: (
+        <>
+          <b>duration: </b>
+          {duration}
+        </>
+      ),
+    },
+    {
+      Icon: FaBook,
+      label: (
+        <>
+          <b>chapters: </b>
+          {chapters}
+        </>
+      ),
+    },
+  ];
   return (
     <div
       className={
