@@ -15,6 +15,7 @@ const CourseOutline = () => {
         title={courseOutlineData.courseTitle}
         description={courseOutlineData.courseDescription}
       />
+
       <CourseDetailBanner
         chapters={courseOutlineData.chapters.length}
         duration={courseOutlineData.totalDuration}

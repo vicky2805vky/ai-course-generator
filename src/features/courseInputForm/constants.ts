@@ -60,7 +60,7 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
       type: "select",
       name: "chapters",
       attributes: {},
-      options: ["3", "4", "5", "6", "7", "8", "9", "10"],
+      options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
     },
   ],
   form3: [

@@ -3,13 +3,23 @@ import {
   DialogContent,
   DialogTitle,
   DialogHeader,
+  DialogDescription,
 } from "@/components/ui/dialog";
-const LoadingDialog = ({ open }: { open: boolean }) => {
+
+type loadingDialogProps = {
+  open: boolean;
+  title: string;
+};
+
+const LoadingDialog = ({ open, title }: loadingDialogProps) => {
   return (
     <Dialog open={open}>
       <DialogContent className="opacity-80">
         <DialogHeader>
-          <DialogTitle>Creating Outline...</DialogTitle>
+          <DialogTitle>{title}...</DialogTitle>
+          <DialogDescription>
+            <span className="sr-only">{title}</span>
+          </DialogDescription>
         </DialogHeader>
         <img src="/loader.gif" alt="loader" className="mx-auto size-28" />
       </DialogContent>

@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export type chapterType = {
   chapterNumber: number;
   chapterName: string;
-  chapterDescription: string;
   chapterDuration: string;
+  lessons: string[];
 };
 
 export type courseOutlineType = {

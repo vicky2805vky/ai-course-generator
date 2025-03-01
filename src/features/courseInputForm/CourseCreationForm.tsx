@@ -50,7 +50,7 @@ const CourseCreationForm = () => {
         maxSteps={formSteps.length}
         setIsSubmitting={setIsSubmitting}
       />
-      <LoadingDialog open={isSubmitting} />
+      <LoadingDialog open={isSubmitting} title="Creating Outline" />
     </div>
   );
 };

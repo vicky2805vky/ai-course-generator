@@ -22,11 +22,15 @@ const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {
           <h6 className="font-bold">{chapter.chapterName}</h6>
         </EditButtonComponent>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 md:w-9/12">
         <EditButtonComponent className="hidden font-bold md:flex">
           <h6 className="">{chapter.chapterName}</h6>
         </EditButtonComponent>
-        <p className="text-xs md:text-sm">{chapter.chapterDescription}</p>
+        <ul className="list-inside list-decimal text-xs md:text-sm">
+          {chapter.lessons.map((lesson, i) => (
+            <li key={i}>{lesson}</li>
+          ))}
+        </ul>
         <div className="flex items-center justify-between text-xs md:text-sm">
           <p className="flex items-center gap-3">
             <FaRegClock /> {chapter.chapterDuration}

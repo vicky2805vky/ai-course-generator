@@ -84,3 +84,16 @@
 input[type="number"] {
   -webkit-appearance: textfield;
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+pre {
+  @apply overflow-scroll rounded-lg border-4 border-solid border-white/20 bg-white bg-opacity-5 p-5 backdrop-blur-sm;
+  line-height: 2;
+}
