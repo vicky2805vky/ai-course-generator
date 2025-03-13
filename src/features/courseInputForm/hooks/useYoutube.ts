@@ -15,13 +15,10 @@ const useYoutube = () => {
       const videoPromises = chapters.map((chapter) =>
         getVideo(`${courseTopic} ${chapter.chapterName}`),
       );
-
       const videoIds = await Promise.all(videoPromises);
-      console.log("Fetched YouTube Videos:", videoIds); // Debug log
-
       dispatch(setChapterVideo(videoIds));
     } catch (error) {
-      console.error("Error fetching YouTube videos:", error);
+      console.error("Failed to fetch YouTube videos:", error);
     }
   };
 };

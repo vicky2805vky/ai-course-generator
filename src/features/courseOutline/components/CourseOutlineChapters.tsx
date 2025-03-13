@@ -1,9 +1,9 @@
-import { chapterType } from "@/state/slices/courseOutlineSlice";
 import CourseChapterCard from "./CourseChapterCard";
-type courseOutlineChaptersProps = {
-  chapters: chapterType[];
-};
-const CourseOutlineChapters = ({ chapters }: courseOutlineChaptersProps) => {
+import { useSelector } from "react-redux";
+import { RootState } from "@/state/store";
+
+const CourseOutlineChapters = () => {
+  const { chapters } = useSelector((store: RootState) => store.courseOutline);
   return (
     <div className="space-y-3">
       <h3 className="text-lg font-bold">Chapters</h3>

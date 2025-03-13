@@ -1,9 +1,9 @@
-import { generateCourseOutline } from "@/configs/gemini";
+import { generateCourseOutline } from "@/features/courseOutline/utils/generateCourseOutline";
 import { setCourseOutline } from "@/state/slices/courseOutlineSlice";
 import { RootState } from "@/state/store";
 import { useDispatch, useSelector } from "react-redux";
 
-const useGemini = () => {
+const useGenerateOutline = () => {
   const courseFormData = useSelector((state: RootState) => state.courseForm);
   const dispatch = useDispatch();
 
@@ -63,4 +63,4 @@ Ensure the output is in **valid JSON format** without markdown formatting.
   };
 };
 
-export default useGemini;
+export default useGenerateOutline;

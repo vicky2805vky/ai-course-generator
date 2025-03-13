@@ -1,4 +1,4 @@
-import { formStateType } from "@/state/slices/courseFormSlice";
+import { formStateType } from "@/types/courseFormSliceTypes";
 import { SelectProps } from "@radix-ui/react-select";
 import { SwitchProps } from "@radix-ui/react-switch";
 import { RefAttributes } from "react";

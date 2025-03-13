@@ -1,21 +1,8 @@
+import {
+  chapterContentType,
+  chapterStateType,
+} from "@/types/chapterSliceTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-type lessonType = {
-  codeExample: string | null;
-  lessonContent: string;
-  lessonTitle: string;
-};
-
-type chapterContentType = {
-  chapterDuration: string;
-  chapterName: string;
-  lessons: lessonType[];
-};
-
-type chapterStateType = {
-  chapterContent: chapterContentType[];
-  videoIds: string[];
-};
 
 const initialState: chapterStateType = {
   chapterContent: [],

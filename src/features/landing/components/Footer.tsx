@@ -1,8 +1,9 @@
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { Separator } from "@/components/ui/separator";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 
 const Footer = () => {
   return (
-    <footer className={GLASSMORPH_BG}>
+    <footer className={PRIMARY_BG}>
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <p className="text-2xl font-bold">Logo</p>
@@ -125,8 +126,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 dark:border-gray-800 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
+        <Separator />
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
           <div>
             <p className="font-bold">Services</p>
 

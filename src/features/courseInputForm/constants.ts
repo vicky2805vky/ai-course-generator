@@ -57,10 +57,14 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
     },
     {
       label: "chapters",
-      type: "select",
+      type: "input",
       name: "chapters",
-      attributes: {},
-      options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      attributes: {
+        type: "number",
+        min: 1,
+        max: 10,
+        required: true,
+      },
     },
   ],
   form3: [

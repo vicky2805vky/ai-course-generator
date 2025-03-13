@@ -1,5 +1,5 @@
 import EditButtonComponent from "@/components/EditButtonComponent";
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import { chapterType } from "@/state/slices/courseOutlineSlice";
 import { FaCheck, FaRegClock } from "react-icons/fa";
 
@@ -7,7 +7,7 @@ const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {
   return (
     <div
       className={
-        GLASSMORPH_BG +
+        PRIMARY_BG +
         "flex flex-col justify-around gap-3 rounded-lg p-3 md:flex-row md:items-center"
       }
     >

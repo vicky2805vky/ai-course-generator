@@ -14,7 +14,7 @@ type loadingDialogProps = {
 const LoadingDialog = ({ open, title }: loadingDialogProps) => {
   return (
     <Dialog open={open}>
-      <DialogContent className="opacity-80">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}...</DialogTitle>
           <DialogDescription>

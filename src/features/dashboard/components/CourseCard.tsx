@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import CourseCardMenu from "./CourseCardMenu";
 
 const CourseCard = () => {
   return (
     <div
       className={
-        GLASSMORPH_BG +
+        PRIMARY_BG +
         "min-w-[250px] max-w-[300px] scale-90 snap-center space-y-3 rounded-lg p-5 [&>div]:flex [&>div]:items-center [&>div]:justify-between"
       }
     >

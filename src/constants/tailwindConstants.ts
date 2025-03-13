@@ -1,2 +1,1 @@
-export const GLASSMORPH_BG =
-  " bg-white bg-opacity-5 backdrop-blur-sm border-4 border-solid border-white/20 rounded-lg ";
+export const PRIMARY_BG = "  border-2 border-accent bg-secondary rounded-lg ";

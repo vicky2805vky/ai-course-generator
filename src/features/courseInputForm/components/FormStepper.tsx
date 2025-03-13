@@ -22,7 +22,7 @@ const FormStepper = ({ currentStep, formSteps }: formStepperProps) => {
             )}
             <div className="relative">
               <div
-                className={`w-fit rounded-full bg-primary p-3 transition-opacity md:text-3xl ${currentStep >= i + 1 ? "opacity-100" : "opacity-50"} `}
+                className={`w-fit rounded-full bg-primary p-3 text-primary-foreground transition-opacity md:text-3xl ${currentStep >= i + 1 ? "opacity-100" : "opacity-50"} `}
               >
                 <step.Icon />
               </div>

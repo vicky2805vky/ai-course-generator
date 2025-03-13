@@ -1,15 +1,5 @@
+import { formStateType } from "@/types/courseFormSliceTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export type formStateType = {
-  topic: string;
-  category: string;
-  description: string;
-  level: string;
-  duration: string;
-  chapters: string;
-  video: boolean;
-  quiz: boolean;
-};
 
 const initialState: formStateType = {
   topic: "",
@@ -21,11 +11,12 @@ const initialState: formStateType = {
   video: false,
   quiz: false,
 };
+
 export const courseFormSlice = createSlice({
   name: "courseForm",
   initialState,
   reducers: {
-    changeState: (
+    changeFormField: (
       state,
       action: PayloadAction<{
         key: keyof formStateType;
@@ -37,6 +28,6 @@ export const courseFormSlice = createSlice({
   },
 });
 
-export const { changeState } = courseFormSlice.actions;
+export const { changeFormField } = courseFormSlice.actions;
 
 export default courseFormSlice.reducer;

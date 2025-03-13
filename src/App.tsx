@@ -4,6 +4,7 @@ import CourseSuccessful from "./features/courseOutline/components/CourseSuccessf
 import CourseOutline from "./features/courseOutline/CourseOutline";
 import CoursePage from "./features/coursePage/CoursePage";
 import Dashboard from "./features/dashboard/Dashboard";
+import Demo from "./features/Demo/Demo";
 import LandingPage from "./features/landing/LandingPage";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path: "/demo",
+        element: <Demo />,
       },
       {
         path: "/home",
@@ -52,10 +57,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div
-      className="min-h-[100vh] bg-[#191D29] bg-cover bg-fixed bg-center bg-no-repeat text-white"
-      style={{ backgroundImage: "url(/bg.jpg)" }}
-    >
+    <div className="min-h-[100vh">
       <RouterProvider router={router} />
     </div>
   );

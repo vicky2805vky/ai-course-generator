@@ -1,4 +1,4 @@
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import FormButtons from "./components/FormButtons";
 import FormStepper from "./components/FormStepper";
 import { useState } from "react";
@@ -31,13 +31,13 @@ const CourseCreationForm = () => {
   return (
     <div
       className={
-        GLASSMORPH_BG +
-        "mx-auto w-[_clamp(280px,_50%,_500px)] space-y-10 overflow-hidden rounded-lg p-5"
+        PRIMARY_BG +
+        "relative mx-auto w-[_clamp(280px,_50%,_500px)] space-y-10 overflow-hidden rounded-lg p-5"
       }
     >
       <Link
         to={"/home"}
-        className="absolute right-0 top-0 rounded-bl-xl bg-primary p-3 text-xs md:text-base"
+        className="absolute right-0 top-0 rounded-bl-xl bg-primary p-3 text-xs text-primary-foreground md:text-base"
       >
         <FaXmark aria-hidden />
         <p className="sr-only">cancel course creation</p>

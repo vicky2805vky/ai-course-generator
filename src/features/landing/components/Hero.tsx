@@ -13,7 +13,7 @@ const Hero = () => {
       </p>
       <div className="flex gap-5 [&>*]:max-w-[200px] [&>*]:flex-1">
         <Button>Get Started</Button>
-        <Button variant="invert">Explore Courses</Button>
+        <Button variant="primaryReverse">Explore Courses</Button>
       </div>
     </section>
   );

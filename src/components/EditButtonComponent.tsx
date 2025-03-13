@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import { Label } from "./ui/label";
 import { cn } from "@/lib/utils";
 
@@ -41,7 +41,7 @@ const EditButtonComponent = ({
             <FaRegEdit />
           </div>
         </DialogTrigger>
-        <DialogContent className={GLASSMORPH_BG + "max-w-[400px] text-white"}>
+        <DialogContent className={PRIMARY_BG + "max-w-[400px] text-white"}>
           <DialogHeader>
             <DialogTitle>Edit</DialogTitle>
             <DialogDescription>make changes to the following</DialogDescription>

@@ -1,4 +1,4 @@
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 
 type howItWorksCardProps = {
   cardNumber: number;
@@ -16,7 +16,7 @@ const HowItWorksCard = ({
   return (
     <section
       className={
-        "flex flex-col justify-between gap-5 rounded-lg p-5" + GLASSMORPH_BG
+        "flex flex-col justify-between gap-5 rounded-lg p-5" + PRIMARY_BG
       }
     >
       <div className="flex flex-wrap items-center gap-5">

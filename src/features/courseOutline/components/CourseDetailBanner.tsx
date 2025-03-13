@@ -1,18 +1,13 @@
-import { GLASSMORPH_BG } from "@/constants/tailwindConstants";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
+import { RootState } from "@/state/store";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { FaBook, FaClock } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
-type courseDetailBannerType = {
-  level: string;
-  duration: string;
-  chapters: number;
-};
-
-const CourseDetailBanner = ({
-  chapters,
-  duration,
-  level,
-}: courseDetailBannerType) => {
+const CourseDetailBanner = () => {
+  const { chapters, totalDuration, level } = useSelector(
+    (store: RootState) => store.courseOutline,
+  );
   const bannerElements = [
     {
       Icon: BsBarChartLineFill,
@@ -28,7 +23,7 @@ const CourseDetailBanner = ({
       label: (
         <>
           <b>duration: </b>
-          {duration}
+          {totalDuration}
         </>
       ),
     },
@@ -37,17 +32,13 @@ const CourseDetailBanner = ({
       label: (
         <>
           <b>chapters: </b>
-          {chapters}
+          {chapters.length}
         </>
       ),
     },
   ];
   return (
-    <div
-      className={
-        GLASSMORPH_BG + "flex flex-wrap justify-around rounded-full py-3"
-      }
-    >
+    <div className={PRIMARY_BG + "flex flex-wrap justify-around py-3"}>
       {bannerElements.map((element, i) => {
         return (
           <div key={i} className="flex items-center gap-2">

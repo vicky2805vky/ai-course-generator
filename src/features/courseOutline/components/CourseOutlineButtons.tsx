@@ -1,7 +1,7 @@
 import LoadingDialog from "@/components/LoadingDialog";
 import { Button } from "@/components/ui/button";
 import useYoutube from "@/features/courseInputForm/hooks/useYoutube";
-import useGenerateChapters from "@/features/coursePage/hooks/useGenerateChapters";
+import useGenerateChapters from "@/features/courseOutline/hooks/useGenerateChapters";
 import { RootState } from "@/state/store";
 import { useState } from "react";
 import { useSelector } from "react-redux";

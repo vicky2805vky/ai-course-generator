@@ -5,7 +5,7 @@ const NavigationLinks = (props: React.HTMLAttributes<HTMLLIElement>) => {
   const navLinks = ["home", "explore", "features", "pricing"];
   return navLinks.map((link, i) => (
     <li key={i} {...props}>
-      <NavLink to={`/${link}`} className="capitalize">
+      <NavLink to={`/${link}`} className="flex-1 capitalize">
         {link}
       </NavLink>
     </li>
