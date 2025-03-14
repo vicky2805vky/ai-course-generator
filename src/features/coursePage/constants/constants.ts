@@ -3,7 +3,7 @@ export const LANGUAGES = [
   "typescript",
   "php",
   "c#",
-  "c++",
+  "cpp",
   "java",
   "vb",
   "lua",

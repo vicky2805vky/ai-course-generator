@@ -5,7 +5,6 @@ const API = axios.create({
 });
 
 export const executeCode = async (code: string, language: string) => {
-  console.log(code);
   const formattedCode = code.replace(/\\n/g, "\n");
 
   try {

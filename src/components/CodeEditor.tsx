@@ -1,21 +1,23 @@
 import Editor from "@monaco-editor/react";
-import { useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
-import { Button } from "./ui/button";
-import { executeCode } from "@/utils/executeCode";
-import { codeExampleType } from "@/types/chapterSliceTypes";
 
 type CodeEditorProps = {
-  code: codeExampleType;
   type: "input" | "output";
-  setType: React.Dispatch<React.SetStateAction<"input" | "output">>;
   language: string;
+  input: string;
+  output: string;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const CodeEditor = ({ type, setType, language, code }: CodeEditorProps) => {
+const CodeEditor = ({
+  type,
+  language,
+  input,
+  output,
+  setInput,
+}: CodeEditorProps) => {
   const { theme } = useTheme();
-  const [input, setInput] = useState(code.code || "");
-  const [output, setOutput] = useState("");
+  console.log(language);
 
   return (
     <>
@@ -23,7 +25,7 @@ const CodeEditor = ({ type, setType, language, code }: CodeEditorProps) => {
         <Editor
           theme={theme === "dark" ? "vs-dark" : "vs-light"}
           height="50vh"
-          defaultLanguage="python"
+          defaultLanguage={language}
           language={language}
           defaultValue="// write your code here"
           value={input.replace(/\\n/g, "\n")}
@@ -49,25 +51,6 @@ const CodeEditor = ({ type, setType, language, code }: CodeEditorProps) => {
           </p>
         </div>
       )}
-      <Button
-        onClick={async () => {
-          const output = await executeCode(input, language);
-          console.log(output);
-
-          if (output.error) {
-            setType("output");
-            setOutput(output.error);
-            return;
-          }
-
-          const answer = output.run.stdout;
-          const error = output.run.stderr;
-          setType("output");
-          setOutput(answer || error);
-        }}
-      >
-        submit
-      </Button>
     </>
   );
 };
