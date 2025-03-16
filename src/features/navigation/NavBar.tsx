@@ -5,6 +5,7 @@ import NavigationLinks from "./components/NavigationLinks";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/ModeToggle";
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
+import AuthButton from "./components/AuthButton";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ const NavBar = () => {
           <NavigationLinks />
         </ul>
         <div className="gap-5 text-xl md:text-2xl [&>*]:cursor-pointer">
+          <AuthButton />
           <ModeToggle />
           <button
             className="md:hidden"
