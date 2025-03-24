@@ -1,0 +1,41 @@
+{
+  "courses": [
+    {
+      "courseTitle": "Introduction to Web Development",
+      "chapterName": "HTML Basics",
+      "chapterDuration": "45 minutes",
+      "lessons": [
+        {
+          "lessonTitle": "Understanding HTML Structure",
+          "lessonContent": "HTML (HyperText Markup Language) is the backbone of web development. It provides the basic structure of a webpage, which is then styled and made interactive using CSS and JavaScript. Every HTML document begins with a `<!DOCTYPE html>` declaration, followed by `<html>`, `<head>`, and `<body>` elements.\n\nA simple HTML document looks like this:\n\n<CodeBlock codeString=\"<!DOCTYPE html>\\n<html>\\n<head>\\n<title>My First Page</title>\\n</head>\\n<body>\\n<h1>Welcome to HTML</h1>\\n</body>\\n</html>\" language=\"html\" />",
+          "codeExample": {
+            "type": "snippet",
+            "language": "html",
+            "code": "<!DOCTYPE html>\\n<html>\\n<head>\\n<title>My First Page</title>\\n</head>\\n<body>\\n<h1>Welcome to HTML</h1>\\n</body>\\n</html>"
+          },
+          "imageKeywords": "html, web development, coding basics"
+        },
+        {
+          "lessonTitle": "HTML Elements & Attributes",
+          "lessonContent": "HTML elements are the building blocks of a webpage. Each element has an opening tag, content, and a closing tag. Some elements, like `<br>` and `<img>`, are self-closing.\n\nCommon HTML elements include headings (`<h1>` to `<h6>`), paragraphs (`<p>`), and links (`<a>`). Attributes provide additional information about elements, such as the `href` attribute in links.\n\nExample:\n\n<CodeBlock codeString=\"<a href='https://example.com'>Click here</a>\" language=\"html\" />",
+          "codeExample": {
+            "type": "snippet",
+            "language": "html",
+            "code": "<a href='https://example.com'>Click here</a>"
+          },
+          "imageKeywords": "html elements, attributes, web links"
+        },
+        {
+          "lessonTitle": "HTML Forms & Input Fields",
+          "lessonContent": "Forms allow users to input data on a website. A form consists of various input fields such as text boxes, checkboxes, and submit buttons.\n\nExample of a simple form:\n\n<CodeBlock codeString=\"<form>\\n<label for='name'>Name:</label>\\n<input type='text' id='name' name='name'>\\n<button type='submit'>Submit</button>\\n</form>\" language=\"html\" />",
+          "codeExample": {
+            "type": "snippet",
+            "language": "html",
+            "code": "<form>\\n<label for='name'>Name:</label>\\n<input type='text' id='name' name='name'>\\n<button type='submit'>Submit</button>\\n</form>"
+          },
+          "imageKeywords": "html forms, user input, website interaction"
+        }
+      ]
+    }
+  ]
+}
