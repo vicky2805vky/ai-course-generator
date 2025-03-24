@@ -1,6 +1,6 @@
 import { getVideo } from "@/configs/youtube";
-import { setChapterVideo } from "@/state/slices/chapterSlice";
-import { RootState } from "@/state/store";
+import { setChapterVideo } from "@/services/slices/chapterSlice";
+import { RootState } from "@/services/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const useYoutube = () => {

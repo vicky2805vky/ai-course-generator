@@ -1,4 +1,4 @@
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import Plyr from "plyr-react";
 import { useSelector } from "react-redux";
 

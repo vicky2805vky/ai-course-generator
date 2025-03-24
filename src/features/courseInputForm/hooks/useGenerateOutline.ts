@@ -1,6 +1,6 @@
 import { generateCourseOutline } from "@/features/courseOutline/utils/generateCourseOutline";
-import { setCourseOutline } from "@/state/slices/courseOutlineSlice";
-import { RootState } from "@/state/store";
+import { setCourseOutline } from "@/services/slices/courseOutlineSlice";
+import { RootState } from "@/services/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const useGenerateOutline = () => {

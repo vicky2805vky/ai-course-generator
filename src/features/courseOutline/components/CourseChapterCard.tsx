@@ -1,6 +1,6 @@
 import EditButtonComponent from "@/components/EditButtonComponent";
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
-import { chapterType } from "@/state/slices/courseOutlineSlice";
+import { chapterType } from "@/services/slices/courseOutlineSlice";
 import { FaCheck, FaRegClock } from "react-icons/fa";
 
 const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {

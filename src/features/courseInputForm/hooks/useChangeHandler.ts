@@ -1,6 +1,6 @@
-import { changeFormField } from "@/state/slices/courseFormSlice";
+import { changeFormField } from "@/services/slices/courseFormSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import { FormField } from "../types";
 
 const useChangeHandler = () => {

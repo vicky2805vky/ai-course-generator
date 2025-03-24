@@ -1,6 +1,6 @@
 import CourseChapterCard from "./CourseChapterCard";
 import { useSelector } from "react-redux";
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 
 const CourseOutlineChapters = () => {
   const { chapters } = useSelector((store: RootState) => store.courseOutline);

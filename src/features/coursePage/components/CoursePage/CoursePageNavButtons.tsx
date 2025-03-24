@@ -1,4 +1,4 @@
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import { useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";

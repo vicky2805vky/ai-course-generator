@@ -1,6 +1,6 @@
 import { generateChapterContent } from "@/features/courseOutline/utils/generateChapters";
 import { LANGUAGES } from "@/features/coursePage/constants/constants";
-import { setChapters } from "@/state/slices/chapterSlice";
+import { setChapters } from "@/services/slices/chapterSlice";
 import { chapterType } from "@/types/courseOutlineSliceTypes";
 import { useDispatch } from "react-redux";
 

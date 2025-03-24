@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import courseFormSlice from "@/state/slices/courseFormSlice";
-import courseOutlineSlice from "@/state/slices/courseOutlineSlice";
-import chapterSlice from "@/state/slices/chapterSlice";
+import courseFormSlice from "@/services/slices/courseFormSlice";
+import courseOutlineSlice from "@/services/slices/courseOutlineSlice";
+import chapterSlice from "@/services/slices/chapterSlice";
 
 export const store = configureStore({
   reducer: {

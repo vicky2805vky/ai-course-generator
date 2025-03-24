@@ -1,5 +1,5 @@
 import EditButtonComponent from "@/components/EditButtonComponent";
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import { useSelector } from "react-redux";
 
 const CourseOutlineHeader = () => {

@@ -1,5 +1,5 @@
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { FaBook, FaClock } from "react-icons/fa";
 import { useSelector } from "react-redux";

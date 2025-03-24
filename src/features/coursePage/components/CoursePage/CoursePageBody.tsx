@@ -1,4 +1,4 @@
-import { RootState } from "@/state/store";
+import { RootState } from "@/services/store";
 import Markdown from "markdown-to-jsx";
 import { useSelector } from "react-redux";
 import CoursePageCodeExample from "./CoursePageCodeExample";
