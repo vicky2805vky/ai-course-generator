@@ -40,7 +40,6 @@ const useGenerateChapters = () => {
       { "courseTitle": "${courseTitle}", "chapterName": "${chapter.chapterName}", "chapterDuration": "${chapter.chapterDuration}", "lessons": [ { "lessonTitle": "{lesson1}", "lessonContent": "Provide an in-depth explanation of {lesson1}. Include real-world applications, best practices, and a step-by-step breakdown of concepts. If needed, insert important formulas or highlights inside:\n\n <div>Key Formula or Concept</div>", "codeExample": "Use the snippet or executable object as described above, or null if not needed" }, { "lessonTitle": "{lesson2}", "lessonContent": "Provide an in-depth explanation of {lesson2}, covering detailed concepts, examples, and key takeaways. If needed, highlight essential points inside:\n\n <div>Key Concept Here</div>", "codeExample": "Use the snippet or executable object as described above, or null if not needed" } ] }`;
       try {
         const result = await generateChapterContent(prompt);
-        console.log(result);
         dispatch(setChapters(result));
       } catch (error) {
         console.log(error);

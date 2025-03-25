@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { FaShareFromSquare } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CourseSuccessful = () => {
+  const { id } = useParams();
   return (
     <div className="flex flex-col gap-5">
       <h6 className="text-2xl font-bold">Course Created Successfully</h6>
@@ -28,7 +29,7 @@ const CourseSuccessful = () => {
         </ul>
       </div>
       <div className="flex gap-5">
-        <Link to={"/course/courseId"}>
+        <Link to={`/course/${id}`}>
           <Button>view course</Button>
         </Link>
         <Button>

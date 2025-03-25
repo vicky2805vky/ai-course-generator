@@ -17,8 +17,6 @@ const CodeEditor = ({
   setInput,
 }: CodeEditorProps) => {
   const { theme } = useTheme();
-  console.log(language);
-
   return (
     <>
       {type === "input" && (

@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FaGear } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import useGenerateOutline from "../hooks/useGenerateOutline";
+import uuid4 from "uuid4";
+import { useDispatch } from "react-redux";
+import { resetForm } from "@/services/slices/courseFormSlice";
 
 type formButtonsProps = {
   currentStep: number;
@@ -74,6 +77,7 @@ const GenerateButton = ({
 }: Pick<formButtonsProps, "setIsSubmitting">) => {
   const navigate = useNavigate();
   const callGemini = useGenerateOutline();
+  const dispatch = useDispatch();
   return (
     <Button
       form="course-from"
@@ -81,8 +85,9 @@ const GenerateButton = ({
         e.preventDefault();
         setIsSubmitting(true);
         await callGemini();
+        dispatch(resetForm());
         setIsSubmitting(false);
-        navigate("/course/courseid/outline");
+        navigate(`/course/${uuid4()}/outline`);
       }}
     >
       Generate <FaGear />

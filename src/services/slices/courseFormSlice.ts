@@ -7,7 +7,7 @@ const initialState: formStateType = {
   description: "",
   level: "beginner",
   duration: "less than 1 hrs",
-  chapters: "5",
+  chapters: "3",
   video: false,
   quiz: false,
 };
@@ -25,9 +25,12 @@ export const courseFormSlice = createSlice({
     ) => {
       (state[action.payload.key] as string | boolean) = action.payload.value;
     },
+    resetForm: () => {
+      return initialState;
+    },
   },
 });
 
-export const { changeFormField } = courseFormSlice.actions;
+export const { changeFormField, resetForm } = courseFormSlice.actions;
 
 export default courseFormSlice.reducer;

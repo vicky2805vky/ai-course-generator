@@ -54,8 +54,6 @@ Ensure the output is in **valid JSON format** without markdown formatting.
   return async () => {
     try {
       const courseOutline = await generateCourseOutline(prompt);
-      console.log(courseOutline);
-
       dispatch(setCourseOutline(courseOutline));
     } catch (error) {
       console.log(error);

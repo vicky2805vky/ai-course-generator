@@ -8,6 +8,7 @@ import Dashboard from "@/features/dashboard/Dashboard";
 import Demo from "@/features/Demo/Demo";
 import LandingPage from "@/features/landing/LandingPage";
 import SignUpPage from "@/features/auth/components/SignUpPage";
+import ExplorePage from "@/features/explore/ExplorePage";
 
 export const ROUTER = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const ROUTER = createBrowserRouter([
       {
         path: "/home",
         element: <Dashboard />,
+      },
+      {
+        path: "/explore",
+        element: <ExplorePage />,
       },
       {
         path: "/course",

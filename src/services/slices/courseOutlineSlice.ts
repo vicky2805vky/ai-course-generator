@@ -1,5 +1,6 @@
 import { courseOutlineType } from "@/types/courseOutlineSliceTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 const initialState: courseOutlineType = {
   courseTitle: "",
   courseDescription: "",
@@ -21,8 +22,12 @@ const courseOutlineSlice = createSlice({
       state.level = action.payload.level;
       state.totalDuration = action.payload.totalDuration;
     },
+    resetCourseOutline: () => {
+      return initialState;
+    },
   },
 });
 
-export const { setCourseOutline } = courseOutlineSlice.actions;
+export const { setCourseOutline, resetCourseOutline } =
+  courseOutlineSlice.actions;
 export default courseOutlineSlice.reducer;

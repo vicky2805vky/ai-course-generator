@@ -13,22 +13,24 @@ const chapterSlice = createSlice({
   name: "chapterSlice",
   initialState,
   reducers: {
+    setChapterState: (_, action: PayloadAction<chapterStateType>) => {
+      return action.payload;
+    },
     setChapters: (state, action: PayloadAction<chapterContentType>) => {
-      const chapter: chapterContentType = {
-        chapterName: action.payload.chapterName,
-        chapterDuration: action.payload.chapterDuration,
-        lessons: action.payload.lessons,
-      };
-      state.chapterContent.push(chapter);
+      state.chapterContent.push(action.payload);
     },
     setChapterVideo: (state, action: PayloadAction<string[]>) => {
       action.payload.map((videoId) => {
         state.videoIds.push(videoId);
       });
     },
+    resetChapters: () => {
+      return initialState;
+    },
   },
 });
 
 export default chapterSlice.reducer;
 
-export const { setChapters, setChapterVideo } = chapterSlice.actions;
+export const { setChapterState, setChapters, setChapterVideo, resetChapters } =
+  chapterSlice.actions;

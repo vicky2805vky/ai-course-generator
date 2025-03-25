@@ -9,9 +9,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import { cn } from "@/lib/utils";
+import { deleteCourse } from "@/services/api/courseApi";
+import { AppDispatch } from "@/services/store";
 import { IoMdMenu } from "react-icons/io";
+import { useDispatch } from "react-redux";
 
-const CourseCardMenu = () => {
+type courseCardMenuProps = {
+  courseId: string;
+};
+
+const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -28,7 +36,13 @@ const CourseCardMenu = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem>view</DropdownMenuItem>
         <DropdownMenuItem>Share</DropdownMenuItem>
-        <DropdownMenuItem>Delete</DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            dispatch(deleteCourse(courseId));
+          }}
+        >
+          Delete
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
