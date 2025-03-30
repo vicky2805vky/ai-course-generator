@@ -1,35 +1,40 @@
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "./ui/button";
+import { ReactNode } from "react";
+import { PRIMARY_BG } from "@/constants/tailwindConstants";
 
-const Modal = () => {
+type modalProps = {
+  title?: string;
+  description?: string;
+  body: ReactNode;
+  trigger: ReactNode;
+  footer?: ReactNode;
+};
+
+const Modal = ({
+  trigger,
+  body,
+  description = "",
+  title = "",
+  footer,
+}: modalProps) => {
   return (
     <Dialog>
-      <DialogTrigger>
-        <span className={cn(buttonVariants())}>open</span>
-      </DialogTrigger>
-      <DialogContent>
+      <DialogTrigger>{trigger}</DialogTrigger>
+      <DialogContent className={PRIMARY_BG + "max-w-[400px] text-white"}>
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
-          <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </DialogDescription>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <div className="flex justify-end gap-2">
-          <Button variant="destructive">Delete</Button>
-          <DialogClose>
-            <span className={cn(buttonVariants())}>close</span>
-          </DialogClose>
-        </div>
+        {body}
+        <DialogFooter>{footer}</DialogFooter>
       </DialogContent>
     </Dialog>
   );

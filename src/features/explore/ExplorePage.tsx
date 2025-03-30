@@ -6,7 +6,7 @@ const ExplorePage = () => {
   const courses = useSelector((state: RootState) => state.course);
   if (!courses.length) return <p>No courses</p>;
   return (
-    <div className="flex flex-wrap justify-around gap-5">
+    <div className="grid grid-cols-[repeat(auto-fit,300px)] justify-around gap-5">
       {courses.map((course) => (
         <CourseCard key={course.id} {...course} />
       ))}

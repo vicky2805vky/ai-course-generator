@@ -1,4 +1,7 @@
-import { courseOutlineType } from "@/types/courseOutlineSliceTypes";
+import {
+  chapterType,
+  courseOutlineType,
+} from "@/types/courseOutlineSliceTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: courseOutlineType = {
@@ -15,19 +18,29 @@ const courseOutlineSlice = createSlice({
   initialState,
   reducers: {
     setCourseOutline: (state, action: PayloadAction<courseOutlineType>) => {
-      state.courseTitle = action.payload.courseTitle;
-      state.courseDescription = action.payload.courseDescription;
-      state.category = action.payload.category;
-      state.chapters = action.payload.chapters;
-      state.level = action.payload.level;
-      state.totalDuration = action.payload.totalDuration;
+      return { ...state, ...action.payload };
     },
-    resetCourseOutline: () => {
-      return initialState;
+    setOutlineField: (
+      state: courseOutlineType,
+      action: PayloadAction<{
+        key: keyof courseOutlineType;
+        value: string | chapterType;
+      }>,
+    ) => {
+      const { key, value } = action.payload;
+      if (typeof value !== "string") {
+        const updatedChapters = state.chapters.filter(
+          (chapter) => chapter.chapterNumber !== value.chapterNumber,
+        );
+        state.chapters = [...updatedChapters, value];
+      } else if (key !== "chapters") {
+        state[key] = value;
+      }
     },
+    resetCourseOutline: () => initialState,
   },
 });
 
-export const { setCourseOutline, resetCourseOutline } =
+export const { setCourseOutline, setOutlineField, resetCourseOutline } =
   courseOutlineSlice.actions;
 export default courseOutlineSlice.reducer;

@@ -1,6 +1,6 @@
-import EditButtonComponent from "@/components/EditButtonComponent";
+import EditButtonComponent from "@/features/EditButtonComponent/EditButtonComponent";
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
-import { chapterType } from "@/services/slices/courseOutlineSlice";
+import { chapterType } from "@/types/courseOutlineSliceTypes";
 import { FaCheck, FaRegClock } from "react-icons/fa";
 
 const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {
@@ -18,12 +18,16 @@ const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {
         <p className="grid size-7 place-content-center rounded-full bg-primary p-3 text-xs">
           {chapter.chapterNumber}
         </p>
-        <EditButtonComponent>
+        <EditButtonComponent defaultValue={chapter} fieldName="chapters">
           <h6 className="font-bold">{chapter.chapterName}</h6>
         </EditButtonComponent>
       </div>
       <div className="flex flex-col gap-3 md:w-9/12">
-        <EditButtonComponent className="hidden font-bold md:flex">
+        <EditButtonComponent
+          className="hidden font-bold md:flex"
+          defaultValue={chapter}
+          fieldName="chapters"
+        >
           <h6 className="">{chapter.chapterName}</h6>
         </EditButtonComponent>
         <ul className="list-inside list-decimal text-xs md:text-sm">

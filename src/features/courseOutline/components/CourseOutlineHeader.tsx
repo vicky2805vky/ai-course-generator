@@ -1,4 +1,4 @@
-import EditButtonComponent from "@/components/EditButtonComponent";
+import EditButtonComponent from "@/features/EditButtonComponent/EditButtonComponent";
 import { RootState } from "@/services/store";
 import { useSelector } from "react-redux";
 
@@ -9,12 +9,15 @@ const CourseOutlineHeader = () => {
   return (
     <div className="flex flex-col-reverse gap-5 md:flex-row [&>*]:flex-1">
       <div className="space-y-5">
-        <EditButtonComponent>
+        <EditButtonComponent defaultValue={courseTitle} fieldName="courseTitle">
           <h3 className="text-2xl font-bold text-primary md:text-3xl">
             {courseTitle}
           </h3>
         </EditButtonComponent>
-        <EditButtonComponent>
+        <EditButtonComponent
+          defaultValue={courseDescription}
+          fieldName="courseDescription"
+        >
           <h6 className="text-lg font-bold md:text-xl">Description</h6>
         </EditButtonComponent>
         <p className="text-justify text-sm md:text-base">{courseDescription}</p>
