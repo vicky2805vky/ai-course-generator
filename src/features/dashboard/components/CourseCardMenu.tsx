@@ -13,7 +13,8 @@ import { deleteCourse } from "@/services/api/courseApi";
 import { AppDispatch } from "@/services/store";
 import { IoMdMenu } from "react-icons/io";
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 type courseCardMenuProps = {
   courseId: string;
@@ -22,6 +23,8 @@ type courseCardMenuProps = {
 const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
+  const navigate = useNavigate();
+  const courseLink = `/course/${courseId}`;
 
   return (
     <DropdownMenu>
@@ -37,8 +40,21 @@ const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
       <DropdownMenuContent className={PRIMARY_BG + "text-white"}>
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>view</DropdownMenuItem>
-        <DropdownMenuItem>Share</DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            navigate(courseLink);
+          }}
+        >
+          view
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            navigator.clipboard.writeText(window.location.host + courseLink);
+            toast("link copied");
+          }}
+        >
+          copy link
+        </DropdownMenuItem>
         {location.pathname.split("/").reverse()[0] === "home" && (
           <DropdownMenuItem
             onClick={() => {

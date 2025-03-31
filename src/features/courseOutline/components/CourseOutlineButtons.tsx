@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useCreateCourse from "../hooks/useCreateCourse";
 import { useNavigate } from "react-router-dom";
 import { resetCourseOutline } from "@/services/slices/courseOutlineSlice";
+import { Progress } from "@/components/ui/progress";
 
 const CourseOutlineButtons = () => {
   const chapterContent = useSelector(
@@ -33,7 +34,9 @@ const CourseOutlineButtons = () => {
       <LoadingDialog
         open={loading}
         title={`${chapterContent.length} out of ${chapters.length} chapters created`}
-      />
+      >
+        <Progress value={(chapterContent.length / chapters.length) * 100} />
+      </LoadingDialog>
     </div>
   );
 };

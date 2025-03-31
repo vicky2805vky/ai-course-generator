@@ -71,3 +71,14 @@ pre:not(code > pre, .code-example pre) {
   @apply overflow-scroll rounded-lg border-2 border-accent bg-secondary p-5;
   line-height: 2;
 }
+
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 20px;
+}
+
+.chapter-body li > p {
+  display: inline;
+}

@@ -16,6 +16,7 @@ const initialState: courseOutlineType = {
     url: "/upload.png",
     alt: "click here to upload",
   },
+  youtubeQueries: [],
 };
 
 const courseOutlineSlice = createSlice({
@@ -41,7 +42,11 @@ const courseOutlineSlice = createSlice({
         state.chapters = updatedChapters.sort(
           (a, b) => a.chapterNumber - b.chapterNumber,
         );
-      } else if (key !== "chapters" && key !== "courseImage") {
+      } else if (
+        key !== "chapters" &&
+        key !== "courseImage" &&
+        key !== "youtubeQueries"
+      ) {
         state[key] = value;
       }
     },

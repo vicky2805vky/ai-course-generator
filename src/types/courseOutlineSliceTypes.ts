@@ -15,4 +15,5 @@ export type courseOutlineType = {
   totalDuration: string;
   chapters: chapterType[];
   courseImage: image;
+  youtubeQueries: string[];
 };

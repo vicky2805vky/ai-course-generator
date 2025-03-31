@@ -4,17 +4,14 @@ import { RootState } from "@/services/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const useYoutube = () => {
-  const chapters = useSelector(
-    (store: RootState) => store.courseOutline.chapters,
+  const youtubeQueries = useSelector(
+    (store: RootState) => store.courseOutline.youtubeQueries,
   );
-  const courseTopic = useSelector((store: RootState) => store.courseForm.topic);
   const dispatch = useDispatch();
 
   return async () => {
     try {
-      const videoPromises = chapters.map((chapter) =>
-        getVideo(`${courseTopic} ${chapter.chapterName}`),
-      );
+      const videoPromises = youtubeQueries.map((query) => getVideo(query));
       const videoIds = await Promise.all(videoPromises);
       dispatch(setChapterVideo(videoIds));
     } catch (error) {

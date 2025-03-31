@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "@/components/Layout";
 import CourseCreationForm from "@/features/courseInputForm/CourseCreationForm";
-import CourseSuccessful from "@/features/courseOutline/components/CourseSuccessful";
+import CourseSuccessful from "@/features/courseOutline/components/courseSuccessful/CourseSuccessful";
 import CourseOutline from "@/features/courseOutline/CourseOutline";
 import CoursePage from "@/features/coursePage/CoursePage";
 import Dashboard from "@/features/dashboard/Dashboard";

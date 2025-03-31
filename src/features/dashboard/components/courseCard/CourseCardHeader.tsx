@@ -12,7 +12,7 @@ const CourseCardHeader = ({
       <img
         src={courseImage.url}
         alt={courseImage.alt}
-        className="mx-auto aspect-video rounded-lg"
+        className="mx-auto aspect-video rounded-lg object-cover"
       />
       <h4 className="text-lg font-bold md:text-xl">{courseTitle}</h4>
     </>

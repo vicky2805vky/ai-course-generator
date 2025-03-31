@@ -11,9 +11,12 @@ const CoursePageBody = ({ currentChapter }: { currentChapter: number }) => {
     return (
       <div className="space-y-3" key={i}>
         <h6 className="text-xl font-bold">{lesson.lessonTitle}</h6>
-        <Markdown className="space-y-3 overflow-hidden text-justify [&_*]:[line-height:2.5] [&_li]:list-inside [&_li]:list-disc">
+        <Markdown className="chapter-body space-y-3 overflow-hidden text-justify [&_*]:[line-height:2.5] [&_li]:list-inside [&_li]:list-disc">
           {lesson.lessonContent.replace(/\\n/g, "\n")}
         </Markdown>
+        <br />
+        <hr />
+        <br />
         <CoursePageCodeExample codeExample={lesson.codeExample} />
       </div>
     );

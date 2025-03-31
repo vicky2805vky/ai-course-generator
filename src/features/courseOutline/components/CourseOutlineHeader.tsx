@@ -32,7 +32,7 @@ const CourseOutlineHeader = () => {
             <img
               src={courseImage.url}
               alt={courseImage.alt}
-              className="mx-auto aspect-square w-10/12 cursor-pointer rounded-lg object-cover object-center transition hover:brightness-75 md:w-4/6"
+              className="mx-auto aspect-video w-10/12 cursor-pointer rounded-lg object-cover object-center transition hover:brightness-75 md:w-4/6"
               draggable={false}
             />
           }

@@ -24,7 +24,7 @@ const CoursePage = () => {
     return () => {
       dispatch(resetChapters());
     };
-  }, []);
+  }, [id, courses]);
   if (!course?.chapters.chapterContent.length) return null;
   return (
     <div className="space-y-5" key={currentChapter}>
