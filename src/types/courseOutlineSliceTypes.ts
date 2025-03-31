@@ -1,3 +1,5 @@
+import { image } from "@/components/searchImage/types";
+
 export type chapterType = {
   chapterNumber: number;
   chapterName: string;
@@ -12,4 +14,5 @@ export type courseOutlineType = {
   level: string;
   totalDuration: string;
   chapters: chapterType[];
+  courseImage: image;
 };

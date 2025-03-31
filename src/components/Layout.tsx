@@ -17,7 +17,7 @@ const Layout = () => {
     if (isProtectedRoute && !isSignedIn) {
       navigate("/sign-up");
     }
-  }, [location.pathname]);
+  }, [location.pathname, isProtectedRoute, isSignedIn]);
 
   return (
     <>

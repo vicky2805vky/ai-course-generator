@@ -1,3 +1,4 @@
+import { image } from "@/components/searchImage/types";
 import { chapterStateType } from "./chapterSliceTypes";
 
 export type courseStateType = {
@@ -9,4 +10,5 @@ export type courseStateType = {
   chapters: chapterStateType;
   level: string;
   totalDuration: string;
+  courseImage: image;
 };

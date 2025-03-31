@@ -1,9 +1,11 @@
+import DrawerComponent from "@/components/DrawerComponent";
+import SearchImage from "@/components/searchImage/SearchImage";
 import EditButtonComponent from "@/features/EditButtonComponent/EditButtonComponent";
 import { RootState } from "@/services/store";
 import { useSelector } from "react-redux";
 
 const CourseOutlineHeader = () => {
-  const { courseTitle, courseDescription } = useSelector(
+  const { courseTitle, courseDescription, courseImage } = useSelector(
     (store: RootState) => store.courseOutline,
   );
   return (
@@ -23,11 +25,20 @@ const CourseOutlineHeader = () => {
         <p className="text-justify text-sm md:text-base">{courseDescription}</p>
       </div>
       <div>
-        <img
-          src="/placeholder.webp"
-          alt="placeholder"
-          className="mx-auto w-10/12 rounded-lg md:w-4/6"
-        />
+        <DrawerComponent
+          title="search image"
+          description="choose an image for your course"
+          trigger={
+            <img
+              src={courseImage.url}
+              alt={courseImage.alt}
+              className="mx-auto aspect-square w-10/12 cursor-pointer rounded-lg object-cover object-center transition hover:brightness-75 md:w-4/6"
+              draggable={false}
+            />
+          }
+        >
+          <SearchImage />
+        </DrawerComponent>
       </div>
     </div>
   );

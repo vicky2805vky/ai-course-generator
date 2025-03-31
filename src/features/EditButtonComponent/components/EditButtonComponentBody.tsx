@@ -28,7 +28,7 @@ const EditButtonComponentBody = (props: editButtonComponentBodyProps) => {
   }, []);
 
   return (
-    <form className="flex items-center gap-5">
+    <section className="flex items-center gap-5">
       <EditButtonComponentBodyString {...props} />
       {chapterContent && (
         <EditButtonComponentBodyChapter
@@ -37,7 +37,7 @@ const EditButtonComponentBody = (props: editButtonComponentBodyProps) => {
           chapterContent={chapterContent}
         />
       )}
-    </form>
+    </section>
   );
 };
 

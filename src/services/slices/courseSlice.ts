@@ -16,7 +16,7 @@ const courseSlice = createSlice({
         }
       })
       .addCase(setCourse.fulfilled, (state, action) => {
-        action.payload && state.push(action.payload);
+        if (action.payload) state.push(action.payload);
       })
       .addCase(deleteCourse.fulfilled, (state, action) => {
         return state.filter((course) => course.id !== action.payload);
@@ -24,5 +24,4 @@ const courseSlice = createSlice({
   },
 });
 
-export const {} = courseSlice.actions;
 export default courseSlice.reducer;

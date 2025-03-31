@@ -13,6 +13,7 @@ import { deleteCourse } from "@/services/api/courseApi";
 import { AppDispatch } from "@/services/store";
 import { IoMdMenu } from "react-icons/io";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 type courseCardMenuProps = {
   courseId: string;
@@ -20,6 +21,8 @@ type courseCardMenuProps = {
 
 const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
   const dispatch = useDispatch<AppDispatch>();
+  const location = useLocation();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -36,13 +39,15 @@ const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem>view</DropdownMenuItem>
         <DropdownMenuItem>Share</DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => {
-            dispatch(deleteCourse(courseId));
-          }}
-        >
-          Delete
-        </DropdownMenuItem>
+        {location.pathname.split("/").reverse()[0] === "home" && (
+          <DropdownMenuItem
+            onClick={() => {
+              dispatch(deleteCourse(courseId));
+            }}
+          >
+            Delete
+          </DropdownMenuItem>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

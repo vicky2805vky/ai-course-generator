@@ -1,3 +1,4 @@
+import { image } from "@/components/searchImage/types";
 import {
   chapterType,
   courseOutlineType,
@@ -11,6 +12,10 @@ const initialState: courseOutlineType = {
   chapters: [],
   level: "",
   totalDuration: "",
+  courseImage: {
+    url: "/upload.png",
+    alt: "click here to upload",
+  },
 };
 
 const courseOutlineSlice = createSlice({
@@ -29,18 +34,28 @@ const courseOutlineSlice = createSlice({
     ) => {
       const { key, value } = action.payload;
       if (typeof value !== "string") {
-        const updatedChapters = state.chapters.filter(
+        const filteredChapters = state.chapters.filter(
           (chapter) => chapter.chapterNumber !== value.chapterNumber,
         );
-        state.chapters = [...updatedChapters, value];
-      } else if (key !== "chapters") {
+        const updatedChapters = [...filteredChapters, value];
+        state.chapters = updatedChapters.sort(
+          (a, b) => a.chapterNumber - b.chapterNumber,
+        );
+      } else if (key !== "chapters" && key !== "courseImage") {
         state[key] = value;
       }
+    },
+    setCourseImage: (state, action: PayloadAction<image>) => {
+      state.courseImage = action.payload;
     },
     resetCourseOutline: () => initialState,
   },
 });
 
-export const { setCourseOutline, setOutlineField, resetCourseOutline } =
-  courseOutlineSlice.actions;
+export const {
+  setCourseOutline,
+  setOutlineField,
+  resetCourseOutline,
+  setCourseImage,
+} = courseOutlineSlice.actions;
 export default courseOutlineSlice.reducer;

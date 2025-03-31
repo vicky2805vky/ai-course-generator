@@ -34,6 +34,7 @@ const useCreateCourse = () => {
       category: courseOutline.category,
       totalDuration: courseOutline.totalDuration,
       chapters: courseChapters,
+      courseImage: courseOutline.courseImage,
     };
     dispatch(setCourse(courseData));
     dispatch(resetCourseOutline());
