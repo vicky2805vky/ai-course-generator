@@ -34,7 +34,11 @@ const useCreateCourse = () => {
       category: courseOutline.category,
       totalDuration: courseOutline.totalDuration,
       chapters: courseChapters,
-      courseImage: courseOutline.courseImage,
+      courseImage:
+        courseOutline.courseImage.url === "/upload.png" &&
+        courseOutline.courseImage.alt === "click here to upload"
+          ? { url: "/placeholder.webp", alt: "placeholder image" }
+          : courseOutline.courseImage,
     };
     dispatch(setCourse(courseData));
     dispatch(resetCourseOutline());

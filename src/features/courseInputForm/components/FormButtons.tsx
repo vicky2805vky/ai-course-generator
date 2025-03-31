@@ -76,7 +76,7 @@ const GenerateButton = ({
   setIsSubmitting,
 }: Pick<formButtonsProps, "setIsSubmitting">) => {
   const navigate = useNavigate();
-  const callGemini = useGenerateOutline();
+  const createOuline = useGenerateOutline();
   const dispatch = useDispatch();
   return (
     <Button
@@ -84,7 +84,7 @@ const GenerateButton = ({
       onClick={async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        await callGemini();
+        await createOuline();
         dispatch(resetForm());
         setIsSubmitting(false);
         navigate(`/course/${uuid4()}/outline`);

@@ -16,7 +16,7 @@ const useGenerateOutline = () => {
 - **Duration:** ${courseFormData.duration}
 - **Chapters:** ${courseFormData.chapters}
 
-${courseFormData.description ? `The user envisions the course with the following details:\n\n"${courseFormData.description}"\n\nEnsure the course structure aligns with this vision.` : ""}
+${courseFormData.preference ? `The user envisions the course with the following details:\n\n"${courseFormData.preference}"\n\nEnsure the course structure aligns with this vision.` : ""}
 
 ### **Output Format:**  
 - Ensure the output is **valid JSON** without markdown formatting.  

@@ -905,23 +905,6 @@
       }
     },
     {
-      "id": "4d348170-59bc-49b6-a1bb-a9718055ebfe",
-      "ownerId": "user_2uOsv1TJtGRtr49X9krthFuBSoc",
-      "courseTitle": "",
-      "courseDescription": "",
-      "level": "",
-      "category": "",
-      "totalDuration": "",
-      "chapters": {
-        "chapterContent": [],
-        "videoIds": []
-      },
-      "courseImage": {
-        "url": "/placeholder.webp",
-        "alt": "placeholder image"
-      }
-    },
-    {
       "id": "9d93de17-a641-427b-a1ca-8e16cac5d327",
       "ownerId": "user_2uOsv1TJtGRtr49X9krthFuBSoc",
       "courseTitle": "Mastering Typewriting: Advanced Techniques for Speed and Accuracy",
