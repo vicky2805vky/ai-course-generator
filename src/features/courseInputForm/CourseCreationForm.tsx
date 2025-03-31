@@ -12,7 +12,7 @@ import LoadingDialog from "@/components/LoadingDialog";
 
 const formSteps = [
   {
-    name: "topic",
+    name: "overview",
     Icon: TbTargetArrow,
   },
   {
@@ -20,7 +20,7 @@ const formSteps = [
     Icon: BsStack,
   },
   {
-    name: "extras",
+    name: "details",
     Icon: HiMiniSquaresPlus,
   },
 ];

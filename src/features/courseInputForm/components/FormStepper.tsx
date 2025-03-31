@@ -26,7 +26,7 @@ const FormStepper = ({ currentStep, formSteps }: formStepperProps) => {
               >
                 <step.Icon />
               </div>
-              <p className="absolute left-[50%] -translate-x-[50%] text-xs">
+              <p className="absolute left-[50%] mt-1 -translate-x-[50%] text-xs">
                 {step.name}
               </p>
             </div>

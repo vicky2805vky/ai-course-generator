@@ -10,7 +10,7 @@ import { ReactNode } from "react";
 type loadingDialogProps = {
   open: boolean;
   title: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const LoadingDialog = ({ open, title, children }: loadingDialogProps) => {

@@ -1,10 +1,8 @@
 export type formStateType = {
   topic: string;
   category: string;
-  description: string;
+  preference: string;
   level: string;
   duration: string;
   chapters: string;
-  video: boolean;
-  quiz: boolean;
 };

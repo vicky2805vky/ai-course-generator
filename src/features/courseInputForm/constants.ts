@@ -28,17 +28,17 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
         required: true,
       },
     },
-    {
-      label: "Description",
-      type: "text-area",
-      name: "description",
-      attributes: {
-        id: "description",
-        placeholder: "describe your course",
-      },
-    },
   ],
   form2: [
+    {
+      label: "preference",
+      type: "text-area",
+      name: "preference",
+      attributes: {
+        id: "preference",
+        placeholder: "How Should the Course Be?",
+      },
+    },
     {
       label: "level",
       type: "select",
@@ -47,8 +47,10 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
 
       options: ["beginner", "intermediate", "advanced"],
     },
+  ],
+  form3: [
     {
-      label: "duration",
+      label: "Total duration",
       type: "select",
       name: "duration",
       attributes: {},
@@ -56,33 +58,13 @@ export const FORM_FIELD_INPUTS: formFieldInputType = {
       options: ["less than 1 hrs", "1-3 hrs", "3-5 hrs", "more than 5 hrs"],
     },
     {
-      label: "chapters",
+      label: "Number of chapters",
       type: "input",
       name: "chapters",
       attributes: {
         type: "number",
         min: 1,
         max: 10,
-        required: true,
-      },
-    },
-  ],
-  form3: [
-    {
-      label: "include video",
-      type: "switch",
-      name: "video",
-      attributes: {
-        id: "include-video",
-        required: true,
-      },
-    },
-    {
-      label: "include quiz",
-      type: "switch",
-      name: "quiz",
-      attributes: {
-        id: "include-quiz",
         required: true,
       },
     },

@@ -4,12 +4,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState: formStateType = {
   topic: "",
   category: "",
-  description: "",
+  preference: "",
   level: "beginner",
   duration: "less than 1 hrs",
   chapters: "3",
-  video: false,
-  quiz: false,
 };
 
 export const courseFormSlice = createSlice({

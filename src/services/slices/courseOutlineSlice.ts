@@ -13,8 +13,8 @@ const initialState: courseOutlineType = {
   level: "",
   totalDuration: "",
   courseImage: {
-    url: "/upload.png",
-    alt: "click here to upload",
+    url: "/placeholder.webp",
+    alt: "placeholder image",
   },
   youtubeQueries: [],
 };
@@ -51,7 +51,20 @@ const courseOutlineSlice = createSlice({
       }
     },
     setCourseImage: (state, action: PayloadAction<image>) => {
-      state.courseImage = action.payload;
+      console.log(action.payload);
+      console.log(action.payload.url === initialState.courseImage.url);
+      console.log(action.payload.alt === initialState.courseImage.alt);
+      if (
+        action.payload.url === initialState.courseImage.url &&
+        action.payload.alt === initialState.courseImage.alt
+      ) {
+        state.courseImage = {
+          url: "/placeholder.webp",
+          alt: "placeholder image",
+        };
+      } else {
+        state.courseImage = action.payload;
+      }
     },
     resetCourseOutline: () => initialState,
   },
