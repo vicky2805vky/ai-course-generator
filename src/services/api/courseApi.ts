@@ -1,13 +1,15 @@
+import { db } from "@/configs/db";
+import { courseTable } from "@/schema/courseSchema";
 import { courseStateType } from "@/types/courseSliceTypes";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { eq } from "drizzle-orm";
 
 export const getCourses = createAsyncThunk(
   "course/get",
   async (_, thunkApi) => {
     try {
-      const response = await axios.get(import.meta.env.VITE_JSON_SERVER_URL);
-      return response.data as courseStateType[];
+      const response = await db.select().from(courseTable);
+      return response;
     } catch (error) {
       thunkApi.rejectWithValue(error);
     }
@@ -17,7 +19,7 @@ export const setCourse = createAsyncThunk(
   "course/post",
   async (course: courseStateType, thunkApi) => {
     try {
-      await axios.post(import.meta.env.VITE_JSON_SERVER_URL, course);
+      await db.insert(courseTable).values(course);
       return course;
     } catch (error) {
       thunkApi.rejectWithValue(error);
@@ -28,7 +30,7 @@ export const deleteCourse = createAsyncThunk(
   "course/delete",
   async (id: string, thunkApi) => {
     try {
-      await axios.delete(import.meta.env.VITE_JSON_SERVER_URL + `/${id}`);
+      await db.delete(courseTable).where(eq(courseTable.id, id));
       return id;
     } catch (error) {
       thunkApi.rejectWithValue(error);

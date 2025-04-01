@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "db": "npx json-server data/db.json -p 4000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
