@@ -2,7 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { ROUTER } from "./components/Router";
 import { dark, experimental__simple } from "@clerk/themes";
 import { useTheme } from "./components/ThemeProvider";
-import { ClerkProvider } from "@clerk/clerk-react";
+import { ClerkProvider, GoogleOneTap } from "@clerk/clerk-react";
 import { useDispatch } from "react-redux";
 import { getCourses } from "./services/api/courseApi";
 import { AppDispatch } from "./services/store";
@@ -22,6 +22,7 @@ const App = () => {
         }}
         publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
       >
+        <GoogleOneTap />
         <RouterProvider router={ROUTER} />
       </ClerkProvider>
     </div>

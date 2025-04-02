@@ -10,7 +10,14 @@ const SearchImageGallery = ({ images }: searchImageGalleryProps) => {
   return (
     <div className="flex h-[50vh] flex-wrap gap-5 overflow-scroll py-5">
       {!images.length && (
-        <p className="m-auto font-bold">Enter keyword to search images</p>
+        <div className="mx-auto flex flex-col items-center justify-center font-bold">
+          <img
+            src="/gallery.png"
+            alt="searching in web with laptop"
+            className="w-7/12 min-w-[200px]"
+          />
+          <p>Enter keyword to search images</p>
+        </div>
       )}
       {images.map((image, i) => {
         return (

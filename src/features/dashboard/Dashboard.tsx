@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import YourCourses from "./components/YourCourses";
 import { Link } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
@@ -16,15 +15,6 @@ const Dashboard = () => {
         </Link>
       </div>
       <YourCourses />
-      <div className="flex w-6/12 max-w-[400px] items-center justify-between gap-5">
-        <div className="flex flex-1 flex-wrap gap-3">
-          <Progress value={80} />
-          <p className="text-nowrap text-xs md:text-sm">
-            4 out of 5 courses created
-          </p>
-        </div>
-        <Button>Upgrade</Button>
-      </div>
     </section>
   );
 };

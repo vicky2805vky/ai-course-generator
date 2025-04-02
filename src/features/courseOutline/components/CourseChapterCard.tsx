@@ -11,11 +11,11 @@ const CourseChapterCard = ({ chapter }: { chapter: chapterType }) => {
         "flex flex-col justify-around gap-3 rounded-lg p-3 md:flex-row md:items-center"
       }
     >
-      <p className="hidden size-7 place-content-center rounded-full bg-primary p-3 text-xs md:grid">
+      <p className="hidden size-7 place-content-center rounded-full bg-primary p-3 text-xs text-primary-foreground md:grid">
         {chapter.chapterNumber}
       </p>
       <div className="flex items-center gap-3 md:hidden">
-        <p className="grid size-7 place-content-center rounded-full bg-primary p-3 text-xs">
+        <p className="grid size-7 place-content-center rounded-full bg-primary p-3 text-xs text-primary-foreground">
           {chapter.chapterNumber}
         </p>
         <EditButtonComponent defaultValue={chapter} fieldName="chapters">

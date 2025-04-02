@@ -42,7 +42,7 @@ const CourseDetailBanner = () => {
       {bannerElements.map((element, i) => {
         return (
           <div key={i} className="flex items-center gap-2">
-            <span className="rounded-full bg-primary p-2 text-xs md:p-3">
+            <span className="rounded-full bg-primary p-2 text-xs text-primary-foreground md:p-3">
               <element.Icon />
             </span>
             <p className="text-xs md:text-base">{element.label}</p>
