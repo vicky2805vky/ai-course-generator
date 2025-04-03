@@ -1,4 +1,5 @@
-import { buttonVariants } from "@/components/ui/button";
+import Modal from "@/components/Modal";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +12,7 @@ import { PRIMARY_BG } from "@/constants/tailwindConstants";
 import { cn } from "@/lib/utils";
 import { deleteCourse } from "@/services/api/courseApi";
 import { AppDispatch } from "@/services/store";
+import { DialogClose } from "@radix-ui/react-dialog";
 import { IoMdMenu } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -47,6 +49,49 @@ const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
         >
           view
         </DropdownMenuItem>
+        {location.pathname.split("/").reverse()[0] === "home" && (
+          <>
+            <DropdownMenuItem
+              onClick={() => {
+                navigate(courseLink + "/edit");
+              }}
+            >
+              Edit
+            </DropdownMenuItem>
+            <Modal
+              trigger={
+                <DropdownMenuItem
+                  onSelect={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  Delete
+                </DropdownMenuItem>
+              }
+              triggerClass="w-full"
+              title="Are you sure?"
+              description="This action is permenant"
+              body={
+                <div className="flex justify-end gap-3">
+                  <DialogClose>
+                    <span
+                      className={cn(buttonVariants({ variant: "destructive" }))}
+                    >
+                      cancel
+                    </span>
+                  </DialogClose>
+                  <Button
+                    onClick={() => {
+                      dispatch(deleteCourse(courseId));
+                    }}
+                  >
+                    confirm
+                  </Button>
+                </div>
+              }
+            />
+          </>
+        )}
         <DropdownMenuItem
           onClick={() => {
             navigator.clipboard.writeText(window.location.host + courseLink);
@@ -55,15 +100,6 @@ const CourseCardMenu = ({ courseId }: courseCardMenuProps) => {
         >
           copy link
         </DropdownMenuItem>
-        {location.pathname.split("/").reverse()[0] === "home" && (
-          <DropdownMenuItem
-            onClick={() => {
-              dispatch(deleteCourse(courseId));
-            }}
-          >
-            Delete
-          </DropdownMenuItem>
-        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

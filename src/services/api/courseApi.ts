@@ -26,6 +26,20 @@ export const setCourse = createAsyncThunk(
     }
   },
 );
+export const updateCourse = createAsyncThunk(
+  "course/update",
+  async (course: courseStateType, thunkApi) => {
+    try {
+      await db
+        .update(courseTable)
+        .set(course)
+        .where(eq(courseTable.id, course.id));
+      return course;
+    } catch (error) {
+      thunkApi.rejectWithValue(error);
+    }
+  },
+);
 export const deleteCourse = createAsyncThunk(
   "course/delete",
   async (id: string, thunkApi) => {

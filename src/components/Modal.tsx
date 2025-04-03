@@ -16,6 +16,7 @@ type modalProps = {
   body: ReactNode;
   trigger: ReactNode;
   footer?: ReactNode;
+  triggerClass?: string;
 };
 
 const Modal = ({
@@ -24,10 +25,11 @@ const Modal = ({
   description = "",
   title = "",
   footer,
+  triggerClass = "",
 }: modalProps) => {
   return (
     <Dialog>
-      <DialogTrigger>{trigger}</DialogTrigger>
+      <DialogTrigger className={triggerClass}>{trigger}</DialogTrigger>
       <DialogContent className={PRIMARY_BG + "max-w-[400px] text-white"}>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>

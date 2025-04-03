@@ -9,6 +9,7 @@ import Demo from "@/features/Demo/Demo";
 import LandingPage from "@/features/landing/LandingPage";
 import SignUpPage from "@/features/auth/components/SignUpPage";
 import ExplorePage from "@/features/explore/ExplorePage";
+import CourseEditPage from "@/features/courseEditPage/CourseEditPage";
 
 export const ROUTER = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const ROUTER = createBrowserRouter([
             element: <CourseCreationForm />,
           },
           {
+            path: ":id",
+            element: <CoursePage />,
+          },
+          {
             path: ":id/outline",
             element: <CourseOutline />,
           },
@@ -47,8 +52,8 @@ export const ROUTER = createBrowserRouter([
             element: <CourseSuccessful />,
           },
           {
-            path: ":id",
-            element: <CoursePage />,
+            path: ":id/edit",
+            element: <CourseEditPage />,
           },
         ],
       },
