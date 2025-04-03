@@ -5,7 +5,6 @@ import CourseSuccessful from "@/features/courseOutline/components/courseSuccessf
 import CourseOutline from "@/features/courseOutline/CourseOutline";
 import CoursePage from "@/features/coursePage/CoursePage";
 import Dashboard from "@/features/dashboard/Dashboard";
-import Demo from "@/features/Demo/Demo";
 import LandingPage from "@/features/landing/LandingPage";
 import SignUpPage from "@/features/auth/components/SignUpPage";
 import ExplorePage from "@/features/explore/ExplorePage";
@@ -19,10 +18,6 @@ export const ROUTER = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
-      },
-      {
-        path: "/demo",
-        element: <Demo />,
       },
       {
         path: "/home",

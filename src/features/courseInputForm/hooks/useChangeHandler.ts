@@ -18,16 +18,6 @@ const useChangeHandler = () => {
       field.attributes.onValueChange = (e) => {
         dispatch(changeFormField({ key: field.name, value: e }));
       };
-    } else if (field.type === "switch") {
-      field.attributes.checked = courseFormData[field.name] as boolean;
-      field.attributes.onCheckedChange = () => {
-        dispatch(
-          changeFormField({
-            key: field.name,
-            value: !field.attributes.checked,
-          }),
-        );
-      };
     }
   };
 };
