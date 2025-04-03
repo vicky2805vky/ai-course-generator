@@ -11,4 +11,5 @@ export type courseStateType = {
   level: string;
   totalDuration: string;
   courseImage: image;
+  createdAt: string;
 };

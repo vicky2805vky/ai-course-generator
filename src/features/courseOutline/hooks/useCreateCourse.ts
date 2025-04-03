@@ -39,6 +39,7 @@ const useCreateCourse = () => {
         courseOutline.courseImage.alt === "click here to upload"
           ? { url: "/placeholder.webp", alt: "placeholder image" }
           : courseOutline.courseImage,
+      createdAt: Date.now().toString(),
     };
     dispatch(setCourse(courseData));
     dispatch(resetCourseOutline());

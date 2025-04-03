@@ -12,4 +12,5 @@ export const courseTable = pgTable("course", {
   totalDuration: varchar("totalDuration").notNull(),
   chapters: json().$type<chapterStateType>().notNull(),
   courseImage: json().$type<image>().notNull(),
+  createdAt: varchar().notNull(),
 });
