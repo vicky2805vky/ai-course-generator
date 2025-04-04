@@ -5,13 +5,13 @@ const howItWorksCardContent = [
     title: "Initiate with API Key",
     image: "",
     description:
-      "Start by entering your API key to authenticate and connect to Lumora’s powerful features.",
+      "Start by entering your API key to authenticate and connect to Magic Quill’s powerful features.",
   },
   {
     title: "Input Your Interests",
     image: "",
     description:
-      "Tell Lumora what subjects or topics interest you, so we can tailor your learning experience.",
+      "Tell Magic Quill what subjects or topics interest you, so we can tailor your learning experience.",
   },
   {
     title: "Confirm the Outline",
@@ -20,10 +20,10 @@ const howItWorksCardContent = [
       "Review and confirm your personalized course outline before moving ahead.",
   },
   {
-    title: "Let Lumora Generate",
+    title: "Let Magic Quill Generate",
     image: "",
     description:
-      "Let Lumora’s AI work its magic and generate a customized course tailored to your needs.",
+      "Let Magic Quill’s AI work its magic and generate a customized course tailored to your needs.",
   },
   {
     title: "Start Learning",

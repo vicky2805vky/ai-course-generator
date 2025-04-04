@@ -1,12 +1,25 @@
 import { Separator } from "@/components/ui/separator";
 import { PRIMARY_BG } from "@/constants/tailwindConstants";
+import { useTheme } from "@/components/ThemeProvider";
 
 const Footer = () => {
+  const { theme } = useTheme();
   return (
     <footer className={PRIMARY_BG}>
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <p className="text-2xl font-bold">Logo</p>
+          <div className="flex items-center gap-3">
+            <img
+              src={`/logos/logo1-${theme}.png`}
+              alt="magic quill logo: a quill writing a book with sparkles around it"
+              className="w-[50px] md:w-[100px]"
+            />
+            <img
+              src={`/logos/logo2-${theme}.png`}
+              alt="magic quill in letters"
+              className="mt-5 w-[100px] md:mt-10 md:w-[200px]"
+            />
+          </div>
 
           <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
             <li>
@@ -244,7 +257,7 @@ const Footer = () => {
         </div>
 
         <p className="text-xs">
-          &copy; 2022. Company Name. All rights reserved.
+          &copy; 2025. Magic Quill. All rights reserved.
         </p>
       </div>
     </footer>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AuthButton = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="flex items-center">
       <SignedOut>
         <Button
           onClick={() => {
