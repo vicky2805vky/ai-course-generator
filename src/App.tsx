@@ -3,14 +3,10 @@ import { ROUTER } from "./components/Router";
 import { dark, experimental__simple } from "@clerk/themes";
 import { useTheme } from "./components/ThemeProvider";
 import { ClerkProvider, GoogleOneTap } from "@clerk/clerk-react";
-import { useDispatch } from "react-redux";
-import { getCourses } from "./services/api/courseApi";
-import { AppDispatch } from "./services/store";
 
 const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch<AppDispatch>();
-  dispatch(getCourses());
+
   return (
     <div className="min-h-[100vh">
       <ClerkProvider

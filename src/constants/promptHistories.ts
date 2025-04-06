@@ -35,3 +35,22 @@ export const CHAPTER_GENERATE_HISTORY = [
     ],
   },
 ];
+
+export const API_CHECK_HISTORY = [
+  {
+    role: "user",
+    parts: [
+      {
+        text: "I am sending this request through api to check the api is working or not so just return an empty space without any letters",
+      },
+    ],
+  },
+  {
+    role: "model",
+    parts: [
+      {
+        text: " ",
+      },
+    ],
+  },
+];

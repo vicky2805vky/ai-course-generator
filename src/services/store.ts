@@ -3,6 +3,7 @@ import courseFormSlice from "@/services/slices/courseFormSlice";
 import courseOutlineSlice from "@/services/slices/courseOutlineSlice";
 import chapterSlice from "@/services/slices/chapterSlice";
 import courseSlice from "@/services/slices/courseSlice";
+import userSlice from "@/services/slices/userSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     courseOutline: courseOutlineSlice,
     chapters: chapterSlice,
     course: courseSlice,
+    user: userSlice,
   },
 });
 

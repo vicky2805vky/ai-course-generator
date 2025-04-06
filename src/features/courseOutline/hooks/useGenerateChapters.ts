@@ -1,11 +1,15 @@
 import { generateChapterContent } from "@/features/courseOutline/utils/generateChapters";
 import { LANGUAGES } from "@/features/coursePage/constants/constants";
+import useGemini from "@/hooks/useGemini";
 import { setChapters } from "@/services/slices/chapterSlice";
+import { RootState } from "@/services/store";
 import { chapterType } from "@/types/courseOutlineSliceTypes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const useGenerateChapters = () => {
+  const apiKey = useSelector((state: RootState) => state.user.apiKey);
   const dispatch = useDispatch();
+  const chatSession = useGemini(apiKey, "chapter");
   return async (courseTitle: string, chapters: chapterType[]) => {
     for (const chapter of chapters) {
       const prompt = `
@@ -39,7 +43,7 @@ const useGenerateChapters = () => {
       
       { "courseTitle": "${courseTitle}", "chapterName": "${chapter.chapterName}", "chapterDuration": "${chapter.chapterDuration}", "lessons": [ { "lessonTitle": "{lesson1}", "lessonContent": "Provide an in-depth explanation of {lesson1}. Include real-world applications, best practices, and a step-by-step breakdown of concepts. If needed, insert important formulas or highlights inside:\n\n <div>Key Formula or Concept</div>", "codeExample": "Use the snippet or executable object as described above, or null if not needed" }, { "lessonTitle": "{lesson2}", "lessonContent": "Provide an in-depth explanation of {lesson2}, covering detailed concepts, examples, and key takeaways. If needed, highlight essential points inside:\n\n <div>Key Concept Here</div>", "codeExample": "Use the snippet or executable object as described above, or null if not needed" } ] }`;
       try {
-        const result = await generateChapterContent(prompt);
+        const result = await generateChapterContent(prompt, chatSession);
         dispatch(setChapters(result));
       } catch (error) {
         console.log(error);

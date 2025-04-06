@@ -1,12 +1,10 @@
-import { model, generationConfig } from "@/configs/gemini";
-import { OUTLINE_GENERATE_HISTORY } from "@/constants/promptHistories";
+import { ChatSession } from "@google/generative-ai";
 import { jsonrepair } from "jsonrepair";
 
-export async function generateCourseOutline(prompt: string) {
-  const chatSession = model.startChat({
-    generationConfig,
-    history: OUTLINE_GENERATE_HISTORY,
-  });
+export async function generateCourseOutline(
+  prompt: string,
+  chatSession: ChatSession,
+) {
   try {
     const result = await chatSession.sendMessage(prompt);
     return JSON.parse(jsonrepair(result.response.text()));

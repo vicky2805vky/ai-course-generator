@@ -1,11 +1,14 @@
 import { generateCourseOutline } from "@/features/courseOutline/utils/generateCourseOutline";
+import useGemini from "@/hooks/useGemini";
 import { setCourseOutline } from "@/services/slices/courseOutlineSlice";
 import { RootState } from "@/services/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const useGenerateOutline = () => {
   const courseFormData = useSelector((state: RootState) => state.courseForm);
+  const apiKey = useSelector((state: RootState) => state.user.apiKey);
   const dispatch = useDispatch();
+  const chatSession = useGemini(apiKey, "outline");
 
   const prompt = `You are an expert in curriculum design, specializing in structured and engaging course outlines. Your task is to generate a well-structured JSON-formatted course outline based on the following user inputs:
 
@@ -67,7 +70,7 @@ ${courseFormData.preference ? `The user envisions the course with the following 
 
   return async () => {
     try {
-      const courseOutline = await generateCourseOutline(prompt);
+      const courseOutline = await generateCourseOutline(prompt, chatSession);
       dispatch(setCourseOutline(courseOutline));
     } catch (error) {
       console.log(error);
