@@ -6,25 +6,33 @@ import ApiActivationForm from "./ApiActivationForm";
 
 const ActivationModal = ({
   setIsSubmitting,
+  type,
 }: {
   setIsSubmitting: React.Dispatch<boolean>;
+  type: "activate" | "edit";
 }) => {
+  const title = type === "activate" ? "Activate your Account" : "Edit Api Key";
+  const Description =
+    type === "activate"
+      ? "Enter your gemini Api Key activate your account"
+      : "Enter your new api key";
+  type === "activate" ? "Activate your Account" : "Edit Api Key";
+  const triggerText =
+    type === "activate" ? "Activate your Account" : "Edit api key";
   return (
     <Modal
-      title="Activate your Account"
-      description="Enter your gemini Api key to activate your account"
-      trigger={
-        <span className={cn(buttonVariants())}>Activate your Account</span>
-      }
+      title={title}
+      description={Description}
+      trigger={<span className={cn(buttonVariants())}>{triggerText}</span>}
       body={<ApiActivationForm setIsSubmitting={setIsSubmitting} />}
-      footer={<Footer />}
+      footer={<Footer type={type} />}
     />
   );
 };
 
 export default ActivationModal;
 
-const Footer = () => {
+const Footer = ({ type }: { type: "activate" | "edit" }) => {
   return (
     <div className="space-x-3">
       <DialogClose className={cn(buttonVariants({ variant: "destructive" }))}>
@@ -35,7 +43,7 @@ const Footer = () => {
         form="ai-activate-form"
         className={cn(buttonVariants())}
       >
-        Activate
+        {type}
       </DialogClose>
     </div>
   );

@@ -20,11 +20,14 @@ const Dashboard = () => {
       <div className="flex items-center justify-between">
         <p className="text-lg font-bold md:text-2xl">your courses</p>
         {userId && userId === user?.id ? (
-          <Link to={"/course/create"}>
-            <Button>Create Course</Button>
-          </Link>
+          <div className="flex gap-3">
+            <ActivationModal type="edit" setIsSubmitting={setIsSubmitting} />
+            <Link to={"/course/create"}>
+              <Button>Create Course</Button>
+            </Link>
+          </div>
         ) : (
-          <ActivationModal setIsSubmitting={setIsSubmitting} />
+          <ActivationModal type="activate" setIsSubmitting={setIsSubmitting} />
         )}
       </div>
       {userId && userId === user?.id ? (

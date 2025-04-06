@@ -26,7 +26,18 @@ export const checkApi = createAsyncThunk(
       const result = await checkAi(apiKey);
       if (result) {
         const user = { apiKey, userId };
-        await db.insert(userTable).values(user);
+        const existingUser = await db
+          .select()
+          .from(userTable)
+          .where(eq(userTable.userId, userId));
+        if (!existingUser.length) {
+          await db.insert(userTable).values(user);
+        } else {
+          await db
+            .update(userTable)
+            .set(user)
+            .where(eq(userTable.userId, user.userId));
+        }
         return user;
       } else if (result === null) {
         return result;

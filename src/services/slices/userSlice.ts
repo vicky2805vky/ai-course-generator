@@ -17,9 +17,13 @@ const userSlice = createSlice({
       .addCase(getUser.fulfilled, (_, action) => {
         if (action.payload) return action.payload;
       })
-      .addCase(checkApi.fulfilled, (_, action) => {
+      .addCase(checkApi.fulfilled, (state, action) => {
         if (action.payload) {
-          toast("account successfully activated");
+          if (state.userId) {
+            toast("api key updated successfully");
+          } else {
+            toast("account successfully activated");
+          }
           return action.payload;
         } else {
           toast("invalid api key");
