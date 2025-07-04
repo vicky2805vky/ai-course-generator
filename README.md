@@ -12,11 +12,11 @@
     An AI powered course generator
     <br />
     <br />
-    <a href="https://magic-quill-ai.vercel.app">View Demo</a>
+    <a href="https://magic-quill-ai.vercel.app" target="_blank" >View Demo</a>
     &middot;
-    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=bug&template=bug-report---.md" target="_blank">Report Bug</a>
     &middot;
-    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=enhancement&template=feature-request---.md" target="_blank">Request Feature</a>
   </p>
 </div>
 
@@ -130,10 +130,6 @@ This is an example of how to list things you need to use the software and how to
 5. Share or learn from your generated course
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -168,12 +164,6 @@ Distributed under the MIT License. See the [LICENSE](./LICENSE) file for more in
 Project Link: [https://github.com/vicky2805vky/ai-course-generator](https://github.com/vicky2805vky/ai-course-generator)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 ## Acknowledgments
 
