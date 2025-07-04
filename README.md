@@ -1,91 +1,215 @@
-# ✨ Magic Quill – AI Course Generator
+<a id="readme-top"></a>
+<br />
 
-An AI-powered platform that creates fully customizable, shareable learning courses from simple user inputs.
+<div align="center">
+  <a href="https://github.com/vicky2805vky/ai-course-generator">
+    <img src="./public/logos/favicon.svg" alt="Logo" width="80" height="80">
+  </a>
 
-### 🔗 [Live Demo](https://magic-quill-ai.vercel.app/)
+  <h3 align="center">Magic Quill</h3>
 
----
+  <p align="center">
+    An AI powered course generator
+    <br />
+    <br />
+    <a href="https://magic-quill-ai.vercel.app">View Demo</a>
+    &middot;
+    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/vicky2805vky/ai-course-generator/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-## 📸 Screenshots
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-<img src="./public/screenshots/screenshot1.png" width="600" alt="Screenshot 1" />
-<img src="./public/screenshots/screenshot2.png" width="600" alt="Screenshot 2" />
+## About The Project
 
----
+![Magic Quill Home Page](./public/screenshots/screenshot1.png)
 
-## 🎯 Features
+Magic Quill is an AI powered that uses AI to simplify course creation for educators, creators, and learners. Input a topic, and it generates a complete course with structure, content, and media.
 
-- **AI-Powered Course Creation**
-- **Authentication with Clerk**
-  - Email and password
-  - Google login
-  - GitHub login
-- **Dark & Light Theme Support**
-- **Auto-generated course outlines**
-- **Shareable learning experiences**
+### 🎯 Key Features
 
----
+- Clerk Authentication (Email, Google, GitHub)
+- Light/Dark Mode
+- Course generation via Google Gemini
+- YouTube video integration
+- Unsplash-powered image search
+- Shareable course pages
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👤 How to Use (For Users)
+### Built With
 
-1. Sign up using Clerk
-2. Activate your account using **Google Gemini API**
-3. Click on **"Create Course"**
-4. Fill in course details and submit
-5. Review and confirm the outline
-6. Enjoy your generated course and share with others!
+- [![React.js][React.js]][React-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+- [![ShadcnUI][ShadcnUI]][ShadcnUI-url]
+- [![Redux][Redux]][Redux-url]
+- [![Clerk][Clerk]][Clerk-url]
+- [![DrizzleORM][DrizzleORM]][DrizzleORM-url]
+- [![Neon][Neon]][Neon-url]
+- [![GoogleGemini][GoogleGemini]][GoogleGemini-url]
+- [![Vite][Vite]][Vite-url]
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🛠️ How to Run (For Developers)
+<!-- GETTING STARTED -->
 
-### 1. Clone the repository
+## Getting Started
 
-```bash
-git clone https://github.com/vicky2805vky/ai-course-generator.git
-```
+To get a local copy up and running follow these simple example steps.
 
-### 2. Install dependencies
+### Prerequisites
 
-```bash
-npm install
-```
+This is an example of how to list things you need to use the software and how to install them.
 
-### 3. Create a .env file in the root with the following variables
+- node js
 
-```
-VITE_YOUTUBE_API_KEY = YOUR_YOUTUBE_API_KEY
-VITE_UNSPLASH_ACCESS_KEY = YOUR_UNSPLASH_API_KEY
-VITE_CLERK_PUBLISHABLE_KEY = YOUR_CLERK_API_KEY
-VITE_DATABASE_URL = YOUR_NEON_DB_URL
-```
+  > https://nodejs.org/en/download
 
-### 4. Start the development server
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-```bash
-npm start
-```
+### Installation
 
-### 5. Open in your browser
+1. Clone the repo
+   ```sh
+   git clone https://github.com/vicky2805vky/ai-course-generator.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. create a `.env` file on the root and enter you api keys
+   ```js
+   VITE_YOUTUBE_API_KEY = "YOUR YOUTUBE API KEY";
+   VITE_UNSPLASH_ACCESS_KEY = "YOUR UNSPLASH API KEY";
+   VITE_CLERK_PUBLISHABLE_KEY = "YOUR CLERK API KEY";
+   VITE_DATABASE_URL = "YOUR NEON DB URL";
+   ```
+4. Change git remote url to avoid accidental pushes to base project
+   ```sh
+   git remote set-url origin github_username/repo_name
+   git remote -v # confirm the changes
+   ```
 
-```bash
-http://localhost:3000
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Technologies used
+<!-- USAGE EXAMPLES -->
 
-- React JS
-- Typescript
-- Tailwind CSS
-- Shadcn UI
-- Redux JS
-- Clerk
-- Drizzle ORM
-- Neon DB
-- Google Gemini
+## Usage
 
-API
+1. Sign in or register
+2. Activate your account using Google Gemini
+3. Click Create Course
+4. Fill out the form and confirm
+5. Share or learn from your generated course
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🤝 Contributing
+<!-- CONTRIBUTING -->
 
-Pull requests are welcome! For major changes, please open an issue first.
+## Contributing
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this project better, please **fork the repo** and create a pull request. You can also open an issue with the label `"enhancement"`.
+
+Don't forget to star the project — it means a lot!
+
+### Steps to Contribute
+
+1.  Fork the project
+2.  Clone your fork (`git clone https://github.com/your-username/repo-name.git`)
+3.  Create a feature branch (`git checkout -b feature/AmazingFeature`)
+4.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+5.  Push to the branch (`git push origin feature/AmazingFeature`)
+6.  Open a pull request
+
+## License
+
+Distributed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+**Vignesh G**
+
+- [vignesh.g.2805@gmail.com](mailto:vignesh.g.2805@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/-vignesh-g)
+- [GitHub](https://github.com/vicky2805vky)
+
+Project Link: [https://github.com/vicky2805vky/ai-course-generator](https://github.com/vicky2805vky/ai-course-generator)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+## Acknowledgments
+
+Special thanks to the resources and tools that made this project possible:
+
+- [Clerk](https://clerk.dev) – Authentication services
+- [Shadcn UI](https://ui.shadcn.com) – UI components
+- [Tailwind CSS](https://tailwindcss.com) – Styling framework
+- [Drizzle ORM](https://orm.drizzle.team) – Database access
+- [Neon](https://neon.tech) – Postgres hosting
+- [Vercel](https://vercel.com) – Deployment platform
+- [Google Gemini API](https://deepmind.google/technologies/gemini/) – AI course generation
+- [TubeGuruji – AI course generator tutorial](https://youtu.be/dJPVV0nFFWY?si=Yc5As1hMbczd57IG)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
+[ShadcnUI]: https://img.shields.io/badge/Shadcn_UI-black?style=for-the-badge&logo=tailwindcss&logoColor=white
+[ShadcnUI-url]: https://ui.shadcn.com/
+[Redux]: https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white
+[Redux-url]: https://redux.js.org/
+[Clerk]: https://img.shields.io/badge/Clerk-3E60F9?style=for-the-badge&logo=clerk&logoColor=white
+[Clerk-url]: https://clerk.dev/
+[DrizzleORM]: https://img.shields.io/badge/Drizzle_ORM-0C0C0C?style=for-the-badge&logo=database&logoColor=white
+[DrizzleORM-url]: https://orm.drizzle.team/
+[Neon]: https://img.shields.io/badge/Neon_DB-008AFF?style=for-the-badge&logo=postgresql&logoColor=white
+[Neon-url]: https://neon.tech/
+[GoogleGemini]: https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white
+[GoogleGemini-url]: https://deepmind.google/technologies/gemini/
+[Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vitejs.dev/
